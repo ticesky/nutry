@@ -1,0 +1,27 @@
+{
+    "name": "@nut-up/cli-dev",
+    "version": "0.0.1",
+    "license": "ISC",
+    "type": "module",
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": "./dist/index.js"
+    },
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "clean": "rm -rf dist",
+        "build": "tsc -p tsconfig.json"
+    },
+    "dependencies": {
+        "@nut-up/config-webpack": "workspace:*",
+        "@nut-up/config-webpack-dev-server": "workspace:*",
+        "@nut-up/core": "workspace:*",
+        "@nut-up/settings": "workspace:*",
+        "@nut-up/utils-build": "workspace:*",
+        "better-opn": "^3.0.2",
+        "proxy-agent": "^6.5.0"
+    }
+}

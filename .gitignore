@@ -1,0 +1,13 @@
+# Misc
+node_modules
+.DS_Store
+yarn-error.log
+/.idea
+*.tgz
+dist
+/*/*/config
+/*/*/coverage
+
+# SSL
+localhost-key.pem
+localhost.pem

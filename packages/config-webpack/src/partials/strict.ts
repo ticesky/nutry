@@ -1,0 +1,33 @@
+import path from 'node:path';
+import {existsSync} from 'node:fs';
+import {Configuration, WebpackPluginInstance} from 'webpack';
+import {compact} from '@nut-up/core';
+import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
+import {StrictOptions} from '../interface.js';
+
+export default (options: StrictOptions = {}, cwd: string): Configuration => {
+    const {
+        disableRequireExtension = false,
+        caseSensitiveModuleSource = false,
+        typeCheck = false,
+    } = options;
+
+    const plugins: Array<WebpackPluginInstance | false> = [
+        caseSensitiveModuleSource && new CaseSensitivePathsPlugin(),
+        typeCheck && existsSync(path.join(cwd, 'tsconfig.json')) && new ForkTsCheckerWebpackPlugin(),
+    ];
+
+    return {
+        module: {
+            parser: {
+                javascript: {
+                    requireContext: !disableRequireExtension,
+                    requireEnsure: !disableRequireExtension,
+                    requireInclude: !disableRequireExtension,
+                },
+            },
+        },
+        plugins: compact(plugins),
+    };
+};

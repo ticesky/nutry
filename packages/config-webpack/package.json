@@ -1,0 +1,61 @@
+{
+    "name": "@nut-up/config-webpack",
+    "version": "0.0.1",
+    "license": "ISC",
+    "type": "module",
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": "./dist/index.js",
+        "./loaders": "./dist/loaders/index.js",
+        "./rules": "./dist/rules/index.js"
+    },
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "clean": "rm -rf dist",
+        "build": "tsc -p tsconfig.json && cp -r src/assets dist"
+    },
+    "dependencies": {
+        "@ecomfe/class-names-loader": "^2.0.0",
+        "@nut-up/config-babel": "workspace:*",
+        "@nut-up/core": "workspace:*",
+        "@nut-up/settings": "workspace:*",
+        "@nut-up/utils-build": "workspace:*",
+        "@svgr/webpack": "^8.1.0",
+        "babel-loader": "^10.0.0",
+        "case-sensitive-paths-webpack-plugin": "^2.4.0",
+        "change-case": "^5.4.4",
+        "classnames": "^2.5.1",
+        "css-loader": "^7.1.2",
+        "eslint-webpack-plugin": "^5.0.2",
+        "find-up": "^8.0.0",
+        "fork-ts-checker-webpack-plugin": "^9.1.0",
+        "hasha": "^7.0.0",
+        "html-webpack-plugin": "^5.6.6",
+        "less": "^4.5.1",
+        "less-loader": "^12.3.0",
+        "mini-css-extract-plugin": "^2.10.0",
+        "postcss": "^8.5.6",
+        "postcss-loader": "^8.2.0",
+        "ramda": "^0.32.0",
+        "regenerator-runtime": "^0.14.1",
+        "style-loader": "^4.0.0",
+        "stylelint-webpack-plugin": "^5.0.1",
+        "workbox-webpack-plugin": "^7.4.0"
+    },
+    "peerDependencies": {
+        "typescript": "5.x",
+        "webpack": "^5.74.0"
+    },
+    "peerDependenciesMeta": {
+        "typescript": {
+            "optional": true
+        }
+    },
+    "devDependencies": {
+        "@types/less": "^3.0.8",
+        "@types/ramda": "^0.31.1"
+    }
+}

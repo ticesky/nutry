@@ -1,0 +1,59 @@
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+import {configure} from '@nut-up/settings';
+
+export default configure(
+    'webpack',
+    {
+        featureMatrix: {
+            stable: {
+                batch: false,
+            },
+            insiders: {
+                batch: true,
+            },
+            dev: {
+                batch: true,
+            },
+        },
+        build: {
+            appTitle: 'TodoMVC - reSKRipt',
+            favicon: path.join(path.dirname(fileURLToPath(import.meta.url)), 'favicon.ico'),
+            appContainerId: 'root',
+            uses: ['emotion', 'tailwind'],
+            script: {
+                polyfill: false,
+            },
+            style: {
+                resources: [
+                    path.join(path.dirname(fileURLToPath(import.meta.url)), 'src', 'styles', 'inject.less'),
+                ],
+                lessVariables: {
+                    '@app-primary-color': '#1890ff',
+                    '@app-primary-color-active': '#40a9ff',
+                    '@app-primary-color-hover': '#096dd9',
+                },
+            },
+            finalize: webpackConfig => {
+                webpackConfig.optimization.minimize = false;
+                webpackConfig.optimization.splitChunks = {
+                    cacheGroups: {
+                        vendors: {
+                            chunks: 'all',
+                            enforce: true,
+                            test: /node_modules/,
+                        },
+                    },
+                };
+                return webpackConfig;
+            },
+            inspect: {
+                duplicatePackages: ['warn', {excludes: ['tslib', 'immer', 'color-name', 'is-lite', 'tree-changes']}],
+                htmlImportable: 'error',
+            },
+        },
+        devServer: {
+            port: 8989,
+        },
+    }
+);

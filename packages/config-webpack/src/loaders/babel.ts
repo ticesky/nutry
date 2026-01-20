@@ -1,0 +1,36 @@
+import {resolve, resolveCoreJsVersion} from '@nut-up/core';
+import {getBabelConfig, BabelConfigOptions} from '@nut-up/config-babel';
+import {BuildEntry, warnAndExitOnInvalidFinalizeReturn} from '@nut-up/settings';
+import {LoaderFactory} from '../interface.js';
+
+const factory: LoaderFactory = async (entry: BuildEntry) => {
+    const {usage, mode, cwd, srcDirectory, projectSettings: {build, devServer}} = entry;
+    const {uses, script: {polyfill, displayName}} = build;
+    const {hot} = devServer;
+    const babelConfigOptions: BabelConfigOptions = {
+        cwd,
+        srcDirectory,
+        mode,
+        uses,
+        displayName,
+        polyfill: polyfill ? await resolveCoreJsVersion(cwd) : false,
+        // 对于需要构建产物用的场合，默认不给热更新
+        hot: usage === 'devServer' ? hot : false,
+        hostType: 'application',
+        openInEditorPrefix: ':origin/__open_in_editor__?file=',
+    };
+    const internalCreatedBabelConfig = getBabelConfig(babelConfigOptions);
+    const finalizedBabelConfig = await build.script.finalize(internalCreatedBabelConfig, entry);
+    warnAndExitOnInvalidFinalizeReturn(finalizedBabelConfig, 'build.script');
+
+    return {
+        loader: await resolve('babel-loader'),
+        // webpack的缓存够强了，所有其它的缓存都可以不开
+        options: {
+            ...finalizedBabelConfig,
+            babelrc: false,
+        },
+    };
+};
+
+export default factory;
