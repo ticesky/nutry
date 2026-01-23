@@ -8,6 +8,9 @@ dist
 /*/*/config
 /*/*/coverage
 
+# TypeScript incremental build cache
+**/*.tsbuildinfo
+
 # SSL
 localhost-key.pem
 localhost.pem

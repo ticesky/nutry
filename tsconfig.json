@@ -1,0 +1,13 @@
+{
+  "files": [],
+  "references": [
+    { "path": "packages/cli" },
+    { "path": "packages/cli-dev" },
+    { "path": "packages/config-babel" },
+    { "path": "packages/config-webpack" },
+    { "path": "packages/config-webpack-dev-server" },
+    { "path": "packages/core" },
+    { "path": "packages/settings" },
+    { "path": "packages/utils-build" }
+  ]
+}

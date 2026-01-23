@@ -6,16 +6,27 @@
     "main": "./dist/index.js",
     "types": "./dist/index.d.ts",
     "exports": {
-        ".": "./dist/index.js",
-        "./loaders": "./dist/loaders/index.js",
-        "./rules": "./dist/rules/index.js"
+        ".": {
+            "types": "./dist/index.d.ts",
+            "default": "./dist/index.js"
+        },
+        "./loaders": {
+            "types": "./dist/loaders/index.d.ts",
+            "default": "./dist/loaders/index.js"
+        },
+        "./rules": {
+            "types": "./dist/rules/index.d.ts",
+            "default": "./dist/rules/index.js"
+        }
     },
     "files": [
         "dist"
     ],
     "scripts": {
-        "clean": "rm -rf dist",
-        "build": "tsc -p tsconfig.json && cp -r src/assets dist"
+        "build": "tsc -b",
+        "postbuild": "cp -r src/assets dist || true",
+        "clean": "tsc -b --clean && pnpm run clean:extra",
+        "clean:extra": "rm -rf dist"
     },
     "dependencies": {
         "@ecomfe/class-names-loader": "^2.0.0",

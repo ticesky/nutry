@@ -19,8 +19,9 @@
     "nut": "./bin/nut.mjs"
   },
   "scripts": {
-    "clean": "rm -rf dist",
-    "build": "tsc -p tsconfig.json"
+    "build": "tsc -b",
+    "clean": "tsc -b --clean && pnpm run clean:extra",
+    "clean:extra": "rm -rf dist"
   },
   "dependencies": {
     "@antfu/install-pkg": "^1.1.0",

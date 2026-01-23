@@ -9,8 +9,9 @@
   },
   "license": "ISC",
   "scripts": {
-    "build": "pnpm -r run build",
-    "build-clean": "pnpm -r run clean && pnpm run build"
+    "build": "tsc -b && pnpm -r --if-present run postbuild",
+    "clean": "tsc -b --clean && pnpm -r --if-present run clean:extra",
+    "build:clean": "pnpm run clean && pnpm run build"
   },
   "devDependencies": {
     "@types/node": "^20.19.30",

@@ -4,6 +4,12 @@
         "rootDir": "src",
         "outDir": "dist",
     },
+    "references": [
+        { "path": "../config-babel" },
+        { "path": "../core" },
+        { "path": "../settings" },
+        { "path": "../utils-build" }
+    ],
     "include": ["src"],
     "exclude": ["dist"]
 }
