@@ -9,7 +9,8 @@
         ".": {
             "types": "./dist/index.d.ts",
             "default": "./dist/index.js"
-        }
+        },
+        "./client": "./client.d.ts"
     },
     "files": [
         "dist"
@@ -19,7 +20,13 @@
         "clean": "tsc -b --clean && pnpm run clean:extra",
         "clean:extra": "rm -rf dist"
     },
+    "devDependencies": {
+        "@types/express": "^4.17.25"
+    },
     "dependencies": {
-        "@reskript/settings": "6.2.1"
+        "@nut-up/core": "workspace:*",
+        "chokidar": "^5.0.0",
+        "hasha": "^7.0.0",
+        "schema-utils": "^4.3.3"
     }
 }

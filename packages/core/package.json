@@ -9,6 +9,10 @@
         ".": {
             "types": "./dist/index.d.ts",
             "default": "./dist/index.js"
+        },
+        "./willBreakingInternalUseOnly": {
+            "types": "./dist/internal.d.cts",
+            "default": "./dist/internal.cjs"
         }
     },
     "files": [
@@ -16,10 +20,22 @@
     ],
     "scripts": {
         "build": "tsc -b",
+        "postbuild": "node scripts/post-build.js && cp dist/internal.d.ts dist/internal.d.cts",
         "clean": "tsc -b --clean && pnpm run clean:extra",
         "clean:extra": "rm -rf dist"
     },
     "dependencies": {
-        "@reskript/core": "6.2.1"
+        "bundle-require": "^5.1.0",
+        "caller": "^1.1.0",
+        "dedent": "^1.7.1",
+        "dotenv": "^17.2.3",
+        "dotenv-expand": "^12.0.3",
+        "find-up": "^8.0.0",
+        "g-status": "^2.0.2",
+        "globby": "^16.1.0",
+        "kolorist": "^1.8.0",
+        "pkg-dir": "^9.0.0",
+        "resolve": "^1.22.11",
+        "unixify": "^1.0.0"
     }
 }

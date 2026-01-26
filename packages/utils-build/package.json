@@ -19,7 +19,21 @@
         "clean": "tsc -b --clean && pnpm run clean:extra",
         "clean:extra": "rm -rf dist"
     },
+    "devDependencies": {
+        "@types/less": "^3.0.8",
+        "@types/xml2js": "^0.4.14"
+    },
     "dependencies": {
-        "@reskript/build-utils": "6.2.1"
+        "@nut-up/core": "workspace:*",
+        "@nut-up/settings": "workspace:*",
+        "change-case": "^5.4.4",
+        "cssnano": "^7.1.2",
+        "escape-string-regexp": "^5.0.0",
+        "globby": "^16.1.0",
+        "internal-ip": "^8.0.1",
+        "less-plugin-npm-import": "^2.1.0",
+        "postcss-preset-env": "^11.1.2",
+        "proxy-agent": "^6.5.0",
+        "xml2js": "^0.6.2"
     }
 }

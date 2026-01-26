@@ -63,8 +63,6 @@ const computeCacheKey = async (entry: BuildContext): Promise<string> => {
 
     const gitRoot = await findGitRoot(entry.cwd) ?? entry.cwd;
     const hashIncludes = [
-        path.join(gitRoot, 'package-lock.json'),
-        path.join(gitRoot, 'yarn.lock'),
         path.join(gitRoot, 'pnpm-lock.yaml'),
         // `package.json`里可能会有`browsers`之类的配置，所以不能只认lock文件
         path.join(gitRoot, 'package.json'),
