@@ -1,7 +1,6 @@
 import path from 'node:path';
 import {PluginItem, TransformOptions} from '@babel/core';
 // import debugReactComponentFileName from '@reskript/babel-plugin-debug-react-component-file-name';
-import pluginRemovePropTypes from 'babel-plugin-transform-react-remove-prop-types';
 // @ts-expect-error
 import pluginReactRefresh from 'react-refresh/babel';
 import {compact} from '@nut-up/core';
@@ -29,7 +28,6 @@ export const getBabelConfig = (input?: BabelConfigOptions): TransformOptions => 
     const options = fillBabelConfigOptions(input);
     const {mode, hot, hostType, cwd, srcDirectory} = options;
     const transform = getTransformBabelConfig(options);
-    const requireReactOptimization = mode === 'production' && hostType === 'application';
     const plugins: Array<PluginItem | false> = [
         // 这东西必须放在最前面，不然其它插件会转义出如`function Wrapper()`这样的函数，这个插件再插入代码就会出问题
         // requireFileName(options) && [
@@ -40,7 +38,6 @@ export const getBabelConfig = (input?: BabelConfigOptions): TransformOptions => 
         //     },
         // ],
         ...transform.plugins || [],
-        requireReactOptimization && compatPluginTarget(pluginRemovePropTypes),
         hot && [compatPluginTarget(pluginReactRefresh), {skipEnvCheck: true}],
     ];
 

@@ -30,7 +30,7 @@
     "@nut-up/settings": "workspace:*",
     "clipanion": "4.0.0-rc.4",
     "enquirer": "^2.4.1",
-    "pkg-dir": "^9.0.0",
+    "package-directory": "^8.2.0",
     "typanion": "^3.14.0"
   }
 }

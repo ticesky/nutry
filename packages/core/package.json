@@ -34,7 +34,7 @@
         "g-status": "^2.0.2",
         "globby": "^16.1.0",
         "kolorist": "^1.8.0",
-        "pkg-dir": "^9.0.0",
+        "package-directory": "^8.2.0",
         "resolve": "^1.22.11",
         "unixify": "^1.0.0"
     }

@@ -1,5 +1,4 @@
 import {PluginItem, TransformOptions} from '@babel/core';
-import pluginImport from 'babel-plugin-import';
 import pluginStyledComponents from 'babel-plugin-styled-components';
 import pluginEmotion from '@emotion/babel-plugin';
 import pluginTypeScriptMetadata from 'babel-plugin-transform-typescript-metadata';
@@ -38,14 +37,6 @@ export default (options: BabelConfigOptionsFilled): TransformOptions => {
         ],
         shouldEnable('reflect-metadata', uses) && compatPluginTarget(pluginTypeScriptMetadata),
         ...parseOnly.plugins || [],
-        shouldEnable('antd@4', uses) && [
-            compatPluginTarget(pluginImport),
-            {
-                libraryName: 'antd',
-                libraryDirectory: 'es',
-                style: true,
-            },
-        ],
     ];
 
     return {

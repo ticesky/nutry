@@ -11,5 +11,5 @@
         { "path": "../utils-build" }
     ],
     "include": ["src"],
-    "exclude": ["dist"]
+    "exclude": ["dist", "node_modules"]
 }

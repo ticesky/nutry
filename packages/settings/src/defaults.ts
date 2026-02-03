@@ -1,6 +1,5 @@
 import {
     BuildSettings,
-    DevServerSettings,
     PlaySettings,
     ProjectSettings,
     WebpackBuildSettings,
@@ -13,7 +12,7 @@ import {
 } from './interface/index.js';
 
 const SHARED_BUILD_SETTINGS = {
-    uses: ['lodash'] as ThirdPartyUse[],
+    uses: [] as ThirdPartyUse[],
     thirdParty: false,
     reportLintErrors: true,
     largeAssetSize: 8 * 1024,
@@ -74,7 +73,7 @@ const fillWebpackBuildSettings = (settings?: PartialBuildSettings<WebpackBuildSe
     };
 };
 
-const fillDevServerSettings = (settings?: Partial<DevServerSettings>): DevServerSettings => {
+const fillWebpackDevServerSettings = (settings?: Partial<WebpackDevServerSettings>): WebpackDevServerSettings => {
     return {
         port: 8788,
         apiPrefixes: [],
@@ -84,12 +83,6 @@ const fillDevServerSettings = (settings?: Partial<DevServerSettings>): DevServer
         openPage: '',
         customizeMiddleware: hook => hook,
         ...settings,
-    };
-};
-
-const fillWebpackDevServerSettings = (settings?: Partial<WebpackDevServerSettings>): WebpackDevServerSettings => {
-    return {
-        ...fillDevServerSettings(settings),
         finalize: settings?.finalize ?? (config => config),
     };
 };

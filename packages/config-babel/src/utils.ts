@@ -3,7 +3,7 @@ import {ThirdPartyUse} from '@nut-up/settings';
 import {BabelConfigOptions, BabelConfigOptionsFilled} from './interface.js';
 
 const DEFAULT_OPTIONS: BabelConfigOptionsFilled = {
-    uses: ['lodash'],
+    uses: [],
     mode: 'development',
     hot: false,
     hostType: 'application',

@@ -3,16 +3,9 @@ import presetEnv from '@babel/preset-env';
 import presetTypeScript from '@babel/preset-typescript';
 import presetReact from '@babel/preset-react';
 import pluginDecorators from '@babel/plugin-proposal-decorators';
-import pluginClassProperties from '@babel/plugin-proposal-class-properties';
 import pluginDoExpressions from '@babel/plugin-proposal-do-expressions';
 import pluginExportDefaultFrom from '@babel/plugin-proposal-export-default-from';
-import pluginExportNamespaceFrom from '@babel/plugin-proposal-export-namespace-from';
-import pluginNullishCoalescingOperator from '@babel/plugin-proposal-nullish-coalescing-operator';
-import pluginNumericSeparator from '@babel/plugin-proposal-numeric-separator';
-import pluginOptionalChaining from '@babel/plugin-proposal-optional-chaining';
 import pluginThrowExpressions from '@babel/plugin-proposal-throw-expressions';
-import pluginDynamicImport from '@babel/plugin-syntax-dynamic-import';
-import pluginImportMeta from '@babel/plugin-syntax-import-meta';
 import {BabelConfigOptionsFilled} from './interface.js';
 import {compatPluginTarget, shouldEnable} from './utils.js';
 
@@ -43,22 +36,12 @@ export default (options: BabelConfigOptionsFilled): TransformOptions => {
     ];
     const plugins: PluginItem[] = [
         [compatPluginTarget(pluginDecorators), {legacy: true}],
-        compatPluginTarget(pluginClassProperties),
+        // const x = do { if(a) b; }
         compatPluginTarget(pluginDoExpressions),
         // export Foo from './Foo';
         compatPluginTarget(pluginExportDefaultFrom),
-        // export {Foo} from './Foo';
-        compatPluginTarget(pluginExportNamespaceFrom),
-        // const foo = obejct.foo ?? 'default';
-        compatPluginTarget(pluginNullishCoalescingOperator),
-        // 1_234_567
-        compatPluginTarget(pluginNumericSeparator),
-        // object?.foo?.bar
-        compatPluginTarget(pluginOptionalChaining),
         // const valid = input.isValid() || throw new Error('Invalid')
         compatPluginTarget(pluginThrowExpressions),
-        compatPluginTarget(pluginDynamicImport),
-        compatPluginTarget(pluginImportMeta),
     ];
 
     return {

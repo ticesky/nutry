@@ -54,8 +54,8 @@ export const start = async (cmd: DevCommandLineArgs, serverContext: WebpackServe
     const server = new WebpackDevServer(devServerConfig, compiler);
     await startServer(server);
 
-    if (cmd.open) {
-        const port = devServerConfig.port!;
+    if (cmd.open && devServerConfig.port) {
+        const port = devServerConfig.port;
         const protocol = https?.client ? 'https' : 'http';
         const openURL = `${protocol}://${host}:${port}/${buildContext.projectSettings.devServer.openPage}`;
         open(openURL);
