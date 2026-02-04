@@ -4,11 +4,6 @@
         "rootDir": "src",
         "outDir": "dist",
     },
-    "references": [
-        { "path": "../config-lint" },
-        { "path": "../core" },
-        { "path": "../settings" },
-    ],
     "include": ["src"],
     "exclude": ["dist", "node_modules"]
 }

@@ -9,7 +9,7 @@ const packageJsonContent = fs.readFileSync(
     path.join(dirFromImportMeta(import.meta.url), '..', 'package.json'),
     'utf-8'
 );
-const {version} = JSON.parse(packageJsonContent);
+const {version} = JSON.parse(packageJsonContent) as {version: string};
 
 const cli = new Cli({binaryLabel: 'nut-up', binaryName: 'nut', binaryVersion: version});
 
@@ -21,8 +21,9 @@ cli.register(Builtins.VersionCommand);
 export const run = async () => {
     process.on(
         'unhandledRejection',
-        (e: any) => {
-            logger.error(e.toString());
+        (e: unknown) => {
+            const message = e instanceof Error ? e.message : String(e);
+            logger.error(message);
             process.exit(99);
         }
     );

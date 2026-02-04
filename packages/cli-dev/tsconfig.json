@@ -5,6 +5,7 @@
         "outDir": "dist",
     },
     "references": [
+        { "path": "../config-lint" },
         { "path": "../config-webpack" },
         { "path": "../config-webpack-dev-server" },
         { "path": "../core" },

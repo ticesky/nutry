@@ -22,9 +22,11 @@
         "build": "tsc -b",
         "postbuild": "node scripts/post-build.js && cp dist/internal.d.ts dist/internal.d.cts",
         "clean": "tsc -b --clean && pnpm run clean:extra",
-        "clean:extra": "rm -rf dist"
+        "clean:extra": "rm -rf dist",
+        "lint": "eslint --max-warnings=0 src"
     },
     "dependencies": {
+        "@nut-up/config-lint": "workspace:*",
         "bundle-require": "^5.1.0",
         "caller": "^1.1.0",
         "dedent": "^1.7.1",

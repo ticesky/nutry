@@ -6,6 +6,7 @@
     },
     "references": [
         { "path": "../config-webpack" },
+        { "path": "../config-lint" },
         { "path": "../core" },
         { "path": "../settings" },
         { "path": "../utils-build" }

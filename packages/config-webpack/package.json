@@ -26,11 +26,13 @@
         "build": "tsc -b",
         "postbuild": "cp -r src/assets dist || true",
         "clean": "tsc -b --clean && pnpm run clean:extra",
-        "clean:extra": "rm -rf dist"
+        "clean:extra": "rm -rf dist",
+        "lint": "eslint --max-warnings=0 src"
     },
     "dependencies": {
         "@ecomfe/class-names-loader": "^2.0.0",
         "@nut-up/config-babel": "workspace:*",
+        "@nut-up/config-lint": "workspace:*",
         "@nut-up/core": "workspace:*",
         "@nut-up/settings": "workspace:*",
         "@nut-up/utils-build": "workspace:*",

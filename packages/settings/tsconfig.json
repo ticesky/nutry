@@ -5,6 +5,7 @@
         "outDir": "dist",
     },
     "references": [
+        { "path": "../config-lint" },
         { "path": "../core" },
     ],
     "include": ["src"],

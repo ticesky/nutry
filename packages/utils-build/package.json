@@ -17,13 +17,15 @@
     "scripts": {
         "build": "tsc -b",
         "clean": "tsc -b --clean && pnpm run clean:extra",
-        "clean:extra": "rm -rf dist"
+        "clean:extra": "rm -rf dist",
+        "lint": "eslint --max-warnings=0 src"
     },
     "devDependencies": {
         "@types/less": "^3.0.8",
         "@types/xml2js": "^0.4.14"
     },
     "dependencies": {
+        "@nut-up/config-lint": "workspace:*",
         "@nut-up/core": "workspace:*",
         "@nut-up/settings": "workspace:*",
         "change-case": "^5.4.4",

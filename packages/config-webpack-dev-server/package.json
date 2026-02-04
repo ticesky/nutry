@@ -17,9 +17,11 @@
     "scripts": {
         "build": "tsc -b",
         "clean": "tsc -b --clean && pnpm run clean:extra",
-        "clean:extra": "rm -rf dist"
+        "clean:extra": "rm -rf dist",
+        "lint": "eslint --max-warnings=0 src"
     },
     "dependencies": {
+        "@nut-up/config-lint": "workspace:*",
         "@nut-up/config-webpack": "workspace:*",
         "@nut-up/core": "workspace:*",
         "@nut-up/settings": "workspace:*",

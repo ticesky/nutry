@@ -1,5 +1,5 @@
 export interface CommandDefinition<A> {
-    run(args: A, rest?: string[] | string): Promise<void>;
+    run(this: void, args: A, rest?: string[] | string): Promise<void>;
 }
 
 export type WorkMode = 'production' | 'development';

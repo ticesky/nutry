@@ -13,7 +13,7 @@
     "@types/ramda": "^0.29.6",
     "@types/react": "~18.2.27",
     "@types/react-dom": "~18.2.12",
-    "eslint": "^8.51.0",
+    "eslint": "^9.39.2",
     "typescript": "next",
     "webpack": "^5.88.2"
   },

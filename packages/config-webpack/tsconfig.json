@@ -6,6 +6,7 @@
     },
     "references": [
         { "path": "../config-babel" },
+        { "path": "../config-lint" },
         { "path": "../core" },
         { "path": "../settings" },
         { "path": "../utils-build" }

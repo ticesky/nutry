@@ -5,15 +5,10 @@ import {PluginItem, TransformOptions} from '@babel/core';
 import pluginReactRefresh from 'react-refresh/babel';
 import {compact} from '@nut-up/core';
 import {compatPluginTarget, fillBabelConfigOptions} from './utils.js';
-import getParseOnlyBabelConfigFilled from './parseOnly.js';
 import getTransformBabelConfigFilled from './transform.js';
 import {BabelConfigOptions, BabelConfigOptionsFilled} from './interface.js';
 
 export type {BabelConfigOptions};
-
-export const getParseOnlyBabelConfig = (options?: BabelConfigOptions): TransformOptions => {
-    return getParseOnlyBabelConfigFilled(fillBabelConfigOptions(options));
-};
 
 export const getTransformBabelConfig = (input?: BabelConfigOptions): TransformOptions => {
     return getTransformBabelConfigFilled(fillBabelConfigOptions(input));
