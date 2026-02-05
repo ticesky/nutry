@@ -17,7 +17,7 @@ const getDevServerMessages = (host: string, port: number, https: boolean, openPa
     `Your application is running here: ${https ? 'https' : 'http'}://${host}:${port}/${openPage}`,
 ];
 
-export const createWebpackDevServerPartial = async (context: BuildContext, host = 'localhost') => {
+export const createWebpackDevServerPartial = (context: BuildContext, host = 'localhost') => {
     const {cwd, projectSettings: {devServer: {hot, port, openPage, https}}} = context;
     const htmlPlugins = createHtmlPluginInstances({...context, isDefaultTarget: true});
     const messageOptions = {

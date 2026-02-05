@@ -54,6 +54,6 @@ export {
 } from './webpack.js';
 export {PortalSettings, SetupPortal, PortalHelper} from './portal.js';
 
-export type Listener = () => void;
+export type Listener = () => void | Promise<void>;
 
 export type Observe = (listener: Listener) => () => void;

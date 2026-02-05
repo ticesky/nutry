@@ -1,8 +1,7 @@
 import {LoaderFactory} from '../interface.js';
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const factory: LoaderFactory = async entry => {
-    return {};
+const factory: LoaderFactory = _entry => {
+    return Promise.resolve(null);
 };
 
 export default factory;

@@ -6,23 +6,35 @@ import hooksPlugin from 'eslint-plugin-react-hooks';
 import importPlugin from 'eslint-plugin-import';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
 
-const eslintConfig: Config[] =  [
+export const baseConfig: Config[] = [
     // --- 1. 全局忽略 ---
     {
         name: "nut-up/ignores",
         ignores: ['dist/**', 'node_modules/**', '**/eslint.config.*', 'build/**', '*.d.ts'],
     },
-    // --- 2. 基础 JS/TS 规则 ---
-    js.configs.recommended,
-    ...tseslint.configs.recommendedTypeChecked, // 开启类型安全的检查
+    // --- 2. JS 基础规则（JS / JSX） ---
     {
-        name: "nut-up/base",
+        name: 'nut-up/js',
+        files: ['**/*.{js,jsx}'],
+        rules: {
+            ...js.configs.recommended.rules,
+        },
+    },
+    // --- 3. TS 类型安全规则（TS / TSX） ---
+    ...tseslint.configs.recommendedTypeChecked.map(cfg => ({
+        ...cfg,
+        files: ['**/*.{ts,tsx}'],
+    })),
+    {
+        name: "nut-up/ts",
+        files: ['**/*.{ts,tsx}'],
         languageOptions: {
             parser: tseslint.parser,
             parserOptions: {
                 warnOnUnsupportedTypeScriptVersion: false,
-                project: ['./tsconfig.json', './packages/*/tsconfig.json'], // 关键：支持 Monorepo
-                // tsconfigRootDir: import.meta.dirname,
+                // project: ['./tsconfig.json', './packages/*/tsconfig.json'], // 关键：支持 Monorepo
+                projectService: true,
+                tsconfigRootDir: import.meta.dirname,
             },
         },
         plugins: {
@@ -45,7 +57,10 @@ const eslintConfig: Config[] =  [
             '@typescript-eslint/restrict-template-expressions': 'off'
         },
     },
-    // --- 3. React 深度优化 ---
+];
+
+export const reactConfig: Config[] =  [
+    // --- 4. React 深度优化 ---
     hooksPlugin.configs.flat.recommended,
     {
         name: "nut-up/react",
@@ -68,22 +83,25 @@ const eslintConfig: Config[] =  [
             // 增强无障碍检查
             'jsx-a11y/alt-text': 'error',
         },
-    },
-    // --- 4. 导入顺序约束（保持代码整洁的秘密） ---
-    // {
-    //     rules: {
-    //         'import/order': ['error', {
-    //             'groups': ['builtin', 'external', 'internal', ['parent', 'sibling'], 'index', 'object', 'type'],
-    //             'pathGroups': [
-    //                 { 'pattern': 'react', 'group': 'external', 'position': 'before' },
-    //                 { 'pattern': '@/components/**', 'group': 'internal' }
-    //             ],
-    //             'pathGroupsExcludedImportTypes': ['react'],
-    //             'newlines-between': 'always',
-    //             'alphabetize': { 'order': 'asc', 'caseInsensitive': true }
-    //         }],
-    //     }
-    // }
+    }
 ];
 
-export default eslintConfig;
+export const styleConfig: Config[] =  [
+    // --- 5. 导入顺序约束（保持代码整洁的秘密） ---
+    {
+        rules: {
+            'import/order': ['error', {
+                'groups': ['builtin', 'external', 'internal', ['parent', 'sibling'], 'index', 'object', 'type'],
+                'pathGroups': [
+                    { 'pattern': 'react', 'group': 'external', 'position': 'before' },
+                    { 'pattern': '@/components/**', 'group': 'internal' }
+                ],
+                'pathGroupsExcludedImportTypes': ['react'],
+                'newlines-between': 'always',
+                'alphabetize': { 'order': 'asc', 'caseInsensitive': true }
+            }],
+        }
+    }
+]
+
+export const eslintConfig = [...baseConfig, ...reactConfig];

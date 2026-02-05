@@ -39,7 +39,7 @@ export const collectEntries = async (location: EntryLocation): Promise<Array<App
         templateExtension: '.ejs',
         defaultTemplate: DEFAULT_HTML_TEMPLATE,
         transformConfig: (imported, resolved) => {
-            const value = imported ?? {};
+            const value = (imported ?? {}) as EntryConfig;
             validateEntryConfig(value, resolved ?? '[unknown-file]');
             return value;
         },

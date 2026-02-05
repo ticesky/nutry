@@ -4,7 +4,8 @@
   "version": "1.0.0",
   "description": "待办列表示例",
   "scripts": {
-    "start": "nut dev"
+    "start": "nut dev",
+    "linter": "nut lint --strict"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +23,8 @@
     "@emotion/styled": "^11.11.0",
     "@nut-up/cli": "workspace:*",
     "@nut-up/cli-dev": "workspace:*",
+    "@nut-up/cli-lint": "workspace:*",
+    "@nut-up/config-lint": "workspace:*",
     "@nut-up/settings": "workspace:*",
     "antd": "^5.9.4",
     "core-js": "^3.33.0",

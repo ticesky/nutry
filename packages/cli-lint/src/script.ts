@@ -1,0 +1,41 @@
+import {ESLint} from 'eslint';
+import {resolveCacheLocation, pFilter} from '@nut-up/core';
+import {getScriptLintBaseConfig} from '@nut-up/config-lint';
+import {resolveLintFiles} from './utils.js';
+import {ResolveOptions} from './interface.js';
+
+type LintResult = ESLint.LintResult;
+type LintOptions = ESLint.Options;
+
+export default async (files: string[], cmd: ResolveOptions): Promise<LintResult[]> => {
+    const resolvedFiles = await resolveLintFiles('script', files, cmd);
+
+    // 因为`ESLint`的创建和调用非常消耗时间（500ms+），所以这里做一个快速短路，在没有文件的时候就跳过了
+    if (!resolvedFiles.length) {
+        return [];
+    }
+
+    const baseConfig = getScriptLintBaseConfig({cwd: process.cwd()});
+    const cliConfig: LintOptions = {
+        baseConfig,
+        cache: true,
+        fix: cmd.fix,
+        cacheLocation: await resolveCacheLocation('eslint'),
+        // ESLint 9.x: 当使用内置配置时，设置此项阻止搜索配置文件
+        ...(baseConfig ? {overrideConfigFile: true} : {}),
+    };
+    const cli = new ESLint(cliConfig);
+    const lintingFiles = await pFilter(resolvedFiles, file => cli.isPathIgnored(file).then(ignored => !ignored));
+
+    if (!lintingFiles.length) {
+        return [];
+    }
+
+    const report = await cli.lintFiles(lintingFiles);
+
+    if (cmd.fix) {
+        void ESLint.outputFixes(report);
+    }
+
+    return report;
+};

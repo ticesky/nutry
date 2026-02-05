@@ -26,7 +26,7 @@ export const startServer = async (server: WebpackDevServer): Promise<void> => {
 export const start = async (cmd: DevCommandLineArgs, serverContext: WebpackServerStartContext) => {
     const {buildContext, host, publicPath} = serverContext;
     const {hot, https} = buildContext.projectSettings.devServer;
-    const extra = await createWebpackDevServerPartial(buildContext, host);
+    const extra = createWebpackDevServerPartial(buildContext, host);
     const config = await createWebpackConfig(
         buildContext,
         {

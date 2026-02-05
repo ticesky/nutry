@@ -4,6 +4,7 @@ import {Cli, Builtins} from 'clipanion';
 import {logger, dirFromImportMeta} from '@nut-up/core';
 import BuildCommand from './BuildCommand.js';
 import DevCommand from './DevCommand.js';
+import LintCommand from './LintCommand.js';
 
 const packageJsonContent = fs.readFileSync(
     path.join(dirFromImportMeta(import.meta.url), '..', 'package.json'),
@@ -15,6 +16,7 @@ const cli = new Cli({binaryLabel: 'nut-up', binaryName: 'nut', binaryVersion: ve
 
 cli.register(BuildCommand);
 cli.register(DevCommand);
+cli.register(LintCommand);
 cli.register(Builtins.HelpCommand);
 cli.register(Builtins.VersionCommand);
 

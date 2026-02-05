@@ -13,7 +13,7 @@
     "clean": "tsc -b --clean && pnpm -r --if-present run clean:extra",
     "build:clean": "pnpm run clean && pnpm run build",
     "lint": "pnpm run build:clean && pnpm -r --parallel --no-bail run lint",
-    "testLint": "pnpm -r --parallel --no-bail run lint"
+    "prepare": "husky"
   },
   "devDependencies": {
     "@babel/core": "^7.28.6",
@@ -25,6 +25,8 @@
     "@types/ramda": "^0.31.1",
     "@types/resolve": "^1.20.6",
     "eslint": "^9.39.2",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
     "rollup": "^4.56.0",
     "stylelint": "^15.10.3",
     "typescript": "next",

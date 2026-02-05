@@ -120,7 +120,7 @@ export const watchProjectSettings = async (options: ResolveProjectSettingsOption
         }
 
         cache.hash = newSettingsHash;
-        listeners.forEach(f => f());
+        listeners.forEach(f => void f());
     };
     // eslint-disable-next-line @typescript-eslint/no-misused-promises
     watcher.on('all', notify);
@@ -159,6 +159,7 @@ export const strictCheckRequiredDependency = async (projectSettings: ProjectSett
 };
 
 export function configure(driver: 'webpack', settings: WebpackUserSetting): UserSettings;
-export function configure(driver: ReskriptDriver, settings: any): UserSettings {
-    return {...settings, driver};
+ 
+export function configure(driver: ReskriptDriver, settings: any) {
+    return {...settings, driver} as UserSettings;
 }

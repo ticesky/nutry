@@ -76,7 +76,7 @@ declare module 'babel-plugin-transform-typescript-metadata' {
 }
 
 // TODO: https://github.com/facebook/react/pull/23087
-declare module 'react-refresh/babel.js' {
+declare module 'react-refresh/babel' {
     import {PluginTarget} from '@babel/core';
 
     const target: PluginTarget;

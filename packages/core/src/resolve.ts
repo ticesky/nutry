@@ -56,7 +56,7 @@ export async function importUserModule<T>(tries: string[], defaultValue?: T): Pr
 
     if (target) {
         // TODO: https://github.com/egoist/bundle-require/issues/35
-        const {mod} = await bundleRequire({filepath: target});
+        const {mod} = await bundleRequire({filepath: target}) as {mod: T};
         return {resolved: target, value: mod};
     }
 
@@ -73,7 +73,7 @@ export async function resolveDependencyVersion(name: string, cwd: string): Promi
     const resolve = resolveFrom(cwd);
     const location = await resolve(`${name}/package.json`);
     const content = await fs.readFile(location, 'utf-8');
-    const {version} = JSON.parse(content);
+    const {version} = JSON.parse(content) as {version: string};
     return version;
 }
 

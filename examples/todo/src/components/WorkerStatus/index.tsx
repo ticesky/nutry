@@ -17,7 +17,7 @@ export default function WorkerStatus() {
     useEffect(
         () => {
             const worker = new Worker(new URL('./Worker.ts', import.meta.url), { type: 'module' });
-            worker.addEventListener('message', e => setStatus(e.data));
+            worker.addEventListener('message', e => setStatus(e.data as StatusProps['status']));
             worker.postMessage('ready');
 
             return () => {

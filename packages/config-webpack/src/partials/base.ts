@@ -11,7 +11,7 @@ import ESLintPlugin from 'eslint-webpack-plugin';
 import StyleLintPlugin from 'stylelint-webpack-plugin';
 // import InterpolateHTMLPlugin from '@reskript/webpack-plugin-interpolate-html';
 import {constructDefines, DefineContext} from '@nut-up/utils-build';
-// import {getScriptLintBaseConfig, getStyleLintBaseConfig} from '@nut-up/config-lint';
+import {getScriptLintBaseConfig, getStyleLintBaseConfig} from '@nut-up/config-lint';
 import {ConfigurationFactory, BuildContext} from '../interface.js';
 import {createHtmlPluginInstances, createTransformHtmlPluginInstance} from '../utils/html.js';
 import {convertToWebpackEntry} from '../utils/entry.js';
@@ -81,7 +81,6 @@ const constructDynamicDefines = (context: DefineContext): Record<string, any> =>
     return map(v => DefinePlugin.runtimeValue(() => v, true), staticDefines);
 };
 
-// eslint-disable-next-line complexity
 const factory: ConfigurationFactory = async entry => {
     const {
         usage,
@@ -109,7 +108,7 @@ const factory: ConfigurationFactory = async entry => {
     } = entry;
     const tasks = [
         computeCacheKey(entry),
-        Promise.all(Object.values(rules).map(rule => rule(entry))),
+        Promise.all(Object.values(rules).map(rule => Promise.resolve(rule(entry)))),
         resolve('eslint'),
         resolve('stylelint'),
         resolve('regenerator-runtime'),
@@ -125,7 +124,7 @@ const factory: ConfigurationFactory = async entry => {
     };
     const eslintOptions = {
         eslintPath,
-        // baseConfig: getScriptLintBaseConfig({cwd}),
+        baseConfig: getScriptLintBaseConfig({cwd}),
         exclude: ['node_modules', 'externals'],
         extensions: ['js', 'cjs', 'mjs', 'jsx', 'ts', 'tsx'],
         emitError: true,
@@ -133,7 +132,7 @@ const factory: ConfigurationFactory = async entry => {
     };
     const styleLintOptions = {
         stylelintPath,
-        // config: getStyleLintBaseConfig({cwd}),
+        config: getStyleLintBaseConfig({cwd}),
         emitErrors: true,
         allowEmptyInput: true,
         failOnError: mode === 'production',

@@ -15,5 +15,5 @@ export default function BatchLabel({onFinish}: Props) {
         [onFinish]
     );
 
-    return <button id="batch" type="button" className={c.root} onClick={markAllDone}>all done</button>;
+    return <button id="batch" type="button" className={c.root} onClick={() => void markAllDone()}>all done</button>;
 }

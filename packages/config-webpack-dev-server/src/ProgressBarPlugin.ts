@@ -3,10 +3,11 @@ import {SingleBar, Options} from 'cli-progress';
 import * as kolorist from 'kolorist';
 
 const PROGRESS_BAR_OPTIONS: Options = {
-    format: (options, params, payload) => {
-        const bar = options.formatBar!(params.progress, options);
+    format: (options, params, originalPayload) => {
+        const payload = originalPayload as {message: string} | undefined;
+        const bar = options.formatBar?.(params.progress, options);
         const percentage = Math.round((params.progress * 100));
-        const detail = percentage >= 99 ? '' : kolorist.white(`- ${payload.message}`);
+        const detail = percentage >= 99 ? '' : kolorist.white(`- ${payload?.message}`);
         return `${kolorist.lightGreen('● @nut-up/dev')} ${bar} building (${percentage}%) ${detail}`;
     },
     formatBar: (progress: number) => {

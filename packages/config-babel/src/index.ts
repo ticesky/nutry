@@ -1,12 +1,10 @@
-import path from 'node:path';
 import {PluginItem, TransformOptions} from '@babel/core';
 // import debugReactComponentFileName from '@reskript/babel-plugin-debug-react-component-file-name';
-// @ts-expect-error
 import pluginReactRefresh from 'react-refresh/babel';
 import {compact} from '@nut-up/core';
 import {compatPluginTarget, fillBabelConfigOptions} from './utils.js';
 import getTransformBabelConfigFilled from './transform.js';
-import {BabelConfigOptions, BabelConfigOptionsFilled} from './interface.js';
+import {BabelConfigOptions} from './interface.js';
 
 export type {BabelConfigOptions};
 
@@ -14,14 +12,15 @@ export const getTransformBabelConfig = (input?: BabelConfigOptions): TransformOp
     return getTransformBabelConfigFilled(fillBabelConfigOptions(input));
 };
 
-const requireFileName = (options: BabelConfigOptionsFilled) => {
-    const {mode, hostType} = options;
-    return mode === 'development' && hostType === 'application';
-};
+// const requireFileName = (options: BabelConfigOptionsFilled) => {
+//     const {mode, hostType} = options;
+//     return mode === 'development' && hostType === 'application';
+// };
 
 export const getBabelConfig = (input?: BabelConfigOptions): TransformOptions => {
     const options = fillBabelConfigOptions(input);
-    const {mode, hot, hostType, cwd, srcDirectory} = options;
+    // const {mode, hot, hostType, cwd, srcDirectory} = options;
+    const {hot} = options;
     const transform = getTransformBabelConfig(options);
     const plugins: Array<PluginItem | false> = [
         // 这东西必须放在最前面，不然其它插件会转义出如`function Wrapper()`这样的函数，这个插件再插入代码就会出问题

@@ -21,7 +21,7 @@ const factory: LoaderFactory = async entry => {
             modules: {
                 mode: 'local',
                 exportLocalsConvention: 'dashes',
-                getLocalIdent({resourcePath}: any, localIdentName: string, localName: string): string {
+                getLocalIdent({resourcePath}: {resourcePath: string}, _localIdentName: string, localName: string): string {
                     return generateScopedStyleName(localName, resourcePath);
                 },
             },

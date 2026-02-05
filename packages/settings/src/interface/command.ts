@@ -1,7 +1,6 @@
 import {WorkMode, WorkModeAware, ProjectAware} from '@nut-up/core';
 import {ThirdPartyUse} from './build.js';
 
-// eslint-disable-next-line @typescript-eslint/ban-types
 export type HostType = 'localhost' | 'loopback' | 'ip' | {} & string;
 
 export interface BabelCommandLineArgs {
@@ -37,7 +36,6 @@ export interface DevCommandLineArgs extends WorkModeAware {
     readonly entriesDirectory: string;
     readonly buildTarget: string;
     readonly proxyDomain?: string;
-    // eslint-disable-next-line @typescript-eslint/ban-types
     readonly host?: HostType;
     readonly entry: string;
     readonly strict: boolean;

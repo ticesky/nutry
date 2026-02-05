@@ -1,3 +1,4 @@
+import {type AcceptedPlugin} from 'postcss';
 import {compact, resolveFrom} from '@nut-up/core';
 import presetEnv from 'postcss-preset-env';
 import nano from 'cssnano';
@@ -12,7 +13,7 @@ export default async ({cwd, tailwind, minify}: Options) => {
     const importTailwind = async () => {
         const resolve = resolveFrom(cwd);
         const location = await resolve('tailwindcss');
-        const {default: tailwind} = await import(location);
+        const {default: tailwind} = await import(location) as { default: AcceptedPlugin };
         return tailwind;
     };
     const plugins = [

@@ -1,12 +1,11 @@
 {
     "extends": "../../tsconfig.base.json",
     "compilerOptions": {
+        "allowSyntheticDefaultImports": true,
         "rootDir": "src",
         "outDir": "dist",
     },
     "references": [
-        { "path": "../cli-dev" },
-        { "path": "../cli-lint" },
         { "path": "../config-lint" },
         { "path": "../core" },
         { "path": "../settings" }

@@ -11,12 +11,12 @@ const CONFIG_EXTENSIONS = ['.ts', '.mjs'];
 const readEntryConfig = async <C>(fileBaseName: string, transform: TransformConfig<C>) => {
     try {
         // `importUserModule`如果没有`defaultValue`是会抛异常的，但我们又需要返回`undefined`
-        const defualtValue = {};
+        const defaultValue = {};
         const {value: imported, resolved} = await importUserModule(
             CONFIG_EXTENSIONS.map(v => fileBaseName + v),
-            defualtValue
+            defaultValue
         );
-        return transform(imported === defualtValue ? undefined : imported, resolved);
+        return transform(imported === defaultValue ? undefined : imported, resolved);
     }
     catch (ex) {
         const message = ex instanceof Error ? ex.message : `${ex}`;

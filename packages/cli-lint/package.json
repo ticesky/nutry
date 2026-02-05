@@ -1,5 +1,5 @@
 {
-    "name": "@nut-up/utils-build",
+    "name": "@nut-up/cli-lint",
     "version": "0.0.1",
     "license": "ISC",
     "type": "module",
@@ -20,23 +20,15 @@
         "clean:extra": "rm -rf dist",
         "lint": "eslint --max-warnings=0 src"
     },
-    "devDependencies": {
-        "@types/less": "^3.0.8",
-        "@types/xml2js": "^0.4.14",
-        "postcss": "^8.5.6"
-    },
     "dependencies": {
         "@nut-up/config-lint": "workspace:*",
         "@nut-up/core": "workspace:*",
-        "@nut-up/settings": "workspace:*",
-        "change-case": "^5.4.4",
-        "cssnano": "^7.1.2",
-        "escape-string-regexp": "^5.0.0",
-        "globby": "^16.1.0",
-        "internal-ip": "^8.0.1",
-        "less-plugin-npm-import": "^2.1.0",
-        "postcss-preset-env": "^11.1.2",
-        "proxy-agent": "^6.5.0",
-        "xml2js": "^0.6.2"
+        "eslint-formatter-pretty": "^7.0.0",
+        "eslint-formatter-table": "^7.32.1",
+        "execa": "^9.6.1",
+        "globby": "^16.1.0"
+    },
+    "devDependencies": {
+        "@nut-up/settings": "workspace:*"
     }
 }

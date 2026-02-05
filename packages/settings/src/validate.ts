@@ -1,4 +1,4 @@
-import {validate} from 'schema-utils';
+import {type Schema, validate} from 'schema-utils';
 
 const sourceFilterSchema = {
     type: 'object',
@@ -24,6 +24,7 @@ const severitySchema = {
     enum: ['off', 'print', 'warn', 'error'],
 };
 
+ 
 const ruleConfig = (valueSchema: any) => {
     return {
         anyOf: [
@@ -43,6 +44,7 @@ const ruleConfig = (valueSchema: any) => {
     };
 };
 
+ 
 const optionalRuleConfig = (valueSchema: any) => {
     return {
         anyOf: [
@@ -60,7 +62,7 @@ const optionalRuleConfig = (valueSchema: any) => {
 };
 
 // `schema`并不是一个完全符合JSON Schema的东西
-const schema: any = {
+const schema = {
     properties: {
         driver: {
             enum: ['webpack', 'vite'],
@@ -80,7 +82,7 @@ const schema: any = {
                 },
                 uses: {
                     items: {
-                        enum: ['antd@4', 'lodash', 'styled-components', 'emotion', 'reflect-metadata', 'tailwind'],
+                        enum: ['styled-components', 'emotion', 'reflect-metadata', 'tailwind'],
                         type: 'string',
                     },
                     type: 'array',
@@ -287,8 +289,8 @@ const schema: any = {
     },
     additionalProperties: false,
     type: 'object',
-};
-
-export default (value: any): void => {
-    validate(schema, value, {name: 'Your reSKRipt config'});
+} as Schema;
+ 
+export default (value: object | object[]): void => {
+    validate(schema, value, {name: 'Your nut-up config'});
 };

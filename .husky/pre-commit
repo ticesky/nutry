@@ -1,0 +1,1 @@
+pnpm run build:clean && pnpm lint-staged

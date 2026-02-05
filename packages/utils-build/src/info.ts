@@ -12,7 +12,7 @@ const revision = async (): Promise<string> => {
         const output = await exec('git rev-parse --short HEAD');
         return output.stdout.toString().trim();
     }
-    catch (ex) {
+    catch {
         logger.log('Not a git repository, fallback to default revision');
         return '0000000';
     }

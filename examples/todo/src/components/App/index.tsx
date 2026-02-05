@@ -68,12 +68,10 @@ export default function App() {
         },
         [requestList]
     );
-    useEffect(
-        () => {
-            requestList();
-        },
-        [requestList]
-    );
+
+    useEffect(() => {
+        api.list().then(setTodos);
+    }, []);
 
     return (
         <Layout id="app" className={c('root')}>

@@ -4,7 +4,7 @@ import {equals} from 'ramda';
 import {logger, findGitRoot, readPackageConfig} from '@nut-up/core';
 import {FeatureMatrix, ProjectSettings} from '@nut-up/settings';
 
-const toStringTag = Object.prototype.toString;
+const toStringTag = Object.prototype.toString.bind(Object.prototype);
 
 const getSchema = (obj: Record<string, any>): Array<[string, string]> => {
     const entries = Object.entries(obj);
@@ -69,6 +69,6 @@ export const validateProjectSettings = (settings: ProjectSettings): void => {
     checkFeatureMatrixSchema(settings.featureMatrix);
 
     if (settings.build.reportLintErrors === false) {
-        checkPreCommitHookWhenLintDisabled(settings.cwd);
+        void checkPreCommitHookWhenLintDisabled(settings.cwd);
     }
 };

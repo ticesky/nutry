@@ -21,8 +21,7 @@ const assetModuleConfig = (entry: WebpackBuildEntry) => {
     };
 };
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-export const url = async (entry: WebpackBuildEntry): Promise<RuleSetRule> => {
+export const url = (): RuleSetRule => {
     return {
         resourceQuery: /^\?url$/,
         type: 'asset/resource',
@@ -32,8 +31,7 @@ export const url = async (entry: WebpackBuildEntry): Promise<RuleSetRule> => {
     };
 };
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-export const raw = async (entry: WebpackBuildEntry): Promise<RuleSetRule> => {
+export const raw = (): RuleSetRule => {
     return {
         resourceQuery: /^\?raw$/,
         type: 'asset/source',
@@ -141,7 +139,7 @@ export const css = async (entry: WebpackBuildEntry): Promise<RuleSetRule> => {
     };
 };
 
-export const image = async (entry: WebpackBuildEntry): Promise<RuleSetRule> => {
+export const image = (): RuleSetRule => {
     return {
         test: /\.(jpe?g|png|gif)$/i,
         resourceQuery: {
@@ -178,7 +176,7 @@ export const svg = async (entry: WebpackBuildEntry): Promise<RuleSetRule> => {
     };
 };
 
-export const file = async (entry: WebpackBuildEntry): Promise<RuleSetRule> => {
+export const file = (entry: WebpackBuildEntry): RuleSetRule => {
     return {
         test: /\.(eot|ttf|woff|woff2)(\?.+)?$/,
         resourceQuery: {

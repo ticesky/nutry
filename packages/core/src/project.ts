@@ -18,7 +18,7 @@ export const resolveCacheLocation = async (name: string): Promise<string> => {
 
 export const readPackageConfig = async (cwd: string): Promise<PackageInfo> => {
     const content = await fs.readFile(path.join(cwd, 'package.json'), 'utf-8');
-    const packageConfig = JSON.parse(content);
+    const packageConfig = JSON.parse(content) as PackageInfo;
     return packageConfig;
 };
 
@@ -42,7 +42,7 @@ export const resolveMonorepoPackageDirectories = async (cwd: string): Promise<st
         ? (Array.isArray(packageInfo.workspaces) ? packageInfo.workspaces : packageInfo.workspaces.packages)
         : ['packages/*'];
     const directories = await globby(packages.map(v => `${v}/package.json`), {cwd, absolute: true});
-    return directories.map(path.dirname);
+    return directories.map(filePath => path.dirname(filePath));
 };
 
 export const findMonorepoRoot = async (cwd: string): Promise<string> => {
