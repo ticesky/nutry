@@ -34,7 +34,7 @@ export const baseConfig: Config[] = [
                 warnOnUnsupportedTypeScriptVersion: false,
                 // project: ['./tsconfig.json', './packages/*/tsconfig.json'], // 关键：支持 Monorepo
                 projectService: true,
-                tsconfigRootDir: import.meta.dirname,
+                tsconfigRootDir: process.cwd()
             },
         },
         plugins: {
@@ -54,7 +54,8 @@ export const baseConfig: Config[] = [
             '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
             // 强制 Promise 必须被处理
             '@typescript-eslint/no-floating-promises': 'error',
-            '@typescript-eslint/restrict-template-expressions': 'off'
+            '@typescript-eslint/only-throw-error': 'off',
+            '@typescript-eslint/restrict-template-expressions': 'off',
         },
     },
 ];

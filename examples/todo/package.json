@@ -15,6 +15,7 @@
     "@types/react": "~18.2.27",
     "@types/react-dom": "~18.2.12",
     "eslint": "^9.39.2",
+    "stylelint": "^17.1.1",
     "typescript": "next",
     "webpack": "^5.88.2"
   },

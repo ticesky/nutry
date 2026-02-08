@@ -109,11 +109,9 @@ const factory: ConfigurationFactory = async entry => {
     const tasks = [
         computeCacheKey(entry),
         Promise.all(Object.values(rules).map(rule => Promise.resolve(rule(entry)))),
-        resolve('eslint'),
-        resolve('stylelint'),
         resolve('regenerator-runtime'),
     ] as const;
-    const [cacheKey, moduleRules, eslintPath, stylelintPath, regeneratorRuntimePath] = await Promise.all(tasks);
+    const [cacheKey, moduleRules, regeneratorRuntimePath] = await Promise.all(tasks);
     const defines: DefineContext = {
         features,
         mode,
@@ -123,15 +121,14 @@ const factory: ConfigurationFactory = async entry => {
         env: process.env,
     };
     const eslintOptions = {
-        eslintPath,
         baseConfig: getScriptLintBaseConfig({cwd}),
         exclude: ['node_modules', 'externals'],
         extensions: ['js', 'cjs', 'mjs', 'jsx', 'ts', 'tsx'],
         emitError: true,
         emitWarning: usage === 'devServer',
+        failOnError: mode === 'production',
     };
     const styleLintOptions = {
-        stylelintPath,
         config: getStyleLintBaseConfig({cwd}),
         emitErrors: true,
         allowEmptyInput: true,

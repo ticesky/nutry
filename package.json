@@ -28,7 +28,7 @@
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
     "rollup": "^4.56.0",
-    "stylelint": "^15.10.3",
+    "stylelint": "^17.1.1",
     "typescript": "next",
     "webpack": "^5.88.2",
     "webpack-dev-server": "^4.15.1",

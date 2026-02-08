@@ -5,7 +5,7 @@ import {logger, gitStatus, findGitRoot} from '@nut-up/core';
 import {LintCommandLineArgs} from '@nut-up/settings';
 import {ResolveOptions} from './interface.js';
 import lintScripts from './script.js';
-// import lintStyles from './style.js';
+import lintStyles from './style.js';
 
 type LintResult = ESLint.LintResult;
 type LintMessage = Linter.LintMessage;
@@ -27,9 +27,8 @@ export const run = async (cmd: LintCommandLineArgs, files: string[]): Promise<vo
     const gitRoot = await findGitRoot() || process.cwd();
     const status = await gitStatus(process.cwd());
     const options: ResolveOptions = {...cmd, gitRoot, gitStatus: status};
-    // const [scriptResults, styleResults] = await Promise.all([lintScripts(files, options), lintStyles(files, options)]);
-    const [scriptResults] = await Promise.all([lintScripts(files, options)]);
-    const lintResults = filterUnwantedReports([...scriptResults], cmd);
+    const [scriptResults, styleResults] = await Promise.all([lintScripts(files, options), lintStyles(files, options)]);
+    const lintResults = filterUnwantedReports([...scriptResults, ...styleResults], cmd);
 
     const hasError = lintResults.some(v => v.errorCount > 0);
     const hasWarn = lintResults.some(v => v.warningCount > 0);

@@ -54,7 +54,7 @@
         "postcss-loader": "^8.2.0",
         "regenerator-runtime": "^0.14.1",
         "style-loader": "^4.0.0",
-        "stylelint-webpack-plugin": "^5.0.1",
+        "stylelint-webpack-plugin": "^5.1.0",
         "workbox-webpack-plugin": "^7.4.0"
     },
     "peerDependencies": {

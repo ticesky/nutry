@@ -1,13 +1,15 @@
 import path from 'node:path';
 import fs from 'node:fs';
-import type {Config} from 'eslint/config';
+import type {Config as ESLintConfig} from 'eslint/config';
+import type { Config as StyleLintConfig } from 'stylelint';
 import {eslintConfig} from './eslint.js';
-import stylelint from './stylelint.js';
+import {stylelintConfig} from './stylelint.js';
 export * from './eslint.js';
+export * from './stylelint.js';
 
-export const getScriptLintConfig = () => ([...eslintConfig]);
+export const getScriptLintConfig = () => [...eslintConfig];
 
-export const getStyleLintConfig = (): Record<string, any> => ({...stylelint});
+export const getStyleLintConfig = () => stylelintConfig;
 
 interface BaseConfigOptions {
     cwd: string;
@@ -27,12 +29,13 @@ const hasCustomScriptLintConfig = (cwd: string) => {
     return CUSTOM_SCRIPT_LINT_CONFIG_FILES.some(exists);
 };
 
-export const getScriptLintBaseConfig = ({cwd}: BaseConfigOptions): Config[] | undefined => {
+export const getScriptLintBaseConfig = ({cwd}: BaseConfigOptions): ESLintConfig[] | undefined => {
     return hasCustomScriptLintConfig(cwd) ? undefined : getScriptLintConfig();
 };
 
 const CUSTOM_STYLE_LINT_CONFIG_FILES = [
     'stylelint.config.js',
+    'stylelint.config.mjs',
     'stylelint.config.cjs',
 ];
 
@@ -45,6 +48,6 @@ interface BaseConfigOptions {
     cwd: string;
 }
 
-export const getStyleLintBaseConfig = ({cwd}: BaseConfigOptions): Record<string, any> | undefined => {
+export const getStyleLintBaseConfig = ({cwd}: BaseConfigOptions): StyleLintConfig | undefined => {
     return hasCustomStyleLintConfig(cwd) ? undefined : getStyleLintConfig();
 };
