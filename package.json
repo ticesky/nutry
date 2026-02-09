@@ -36,5 +36,14 @@
   },
   "dependencies": {
     "ramda": "^0.32.0"
+  },
+  "pnpm": {
+    "packageExtensions": {
+      "stylelint-config-standard@*": {
+        "peerDependencies": {
+          "stylelint": "^16.23.0 || ^17.0.0"
+        }
+      }
+    }
   }
 }

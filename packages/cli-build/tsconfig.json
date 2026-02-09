@@ -1,16 +1,16 @@
 {
     "extends": "../../tsconfig.base.json",
     "compilerOptions": {
+        "allowSyntheticDefaultImports": true,
         "rootDir": "src",
         "outDir": "dist",
     },
     "references": [
-        { "path": "../cli-build" },
-        { "path": "../cli-dev" },
-        { "path": "../cli-lint" },
         { "path": "../config-lint" },
+        { "path": "../config-webpack" },
         { "path": "../core" },
-        { "path": "../settings" }
+        { "path": "../settings" },
+        { "path": "../utils-build" }
     ],
     "include": ["src"],
     "exclude": ["dist"]

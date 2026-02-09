@@ -47,7 +47,6 @@ export const stylelintConfig: Config = {
     {
       files: ['**/*.less'],
       ...standardLess,
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       customSyntax: postcssLess,
       extends: [],
       plugins: [stylelintLess],

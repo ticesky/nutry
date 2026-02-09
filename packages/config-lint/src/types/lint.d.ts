@@ -28,10 +28,10 @@ declare module 'stylelint-config-standard-less' {
 }
 
 declare module 'postcss-less' {
-  import { Syntax } from 'postcss';
+  import type { CustomSyntax } from 'stylelint';
   
   // postcss-less 导出的实际上是一个包含 parse 和 stringify 的 Syntax 对象
-  const syntax: Syntax;
+  const syntax: CustomSyntax;
   
   export default syntax;
 }

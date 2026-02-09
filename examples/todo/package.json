@@ -5,7 +5,10 @@
   "description": "待办列表示例",
   "scripts": {
     "start": "nut dev",
-    "linter": "nut lint --strict"
+    "build": "rm -rf node_modules/.cache && nut build --clean --strict --build-target=stable",
+    "analyze": "nut build --clean --strict --analyze --build-target=stable",
+    "linter": "nut lint --strict",
+    "fix": "echo '' >> src/components/App/index.less && nut lint --fix"
   },
   "keywords": [],
   "author": "",
@@ -20,9 +23,10 @@
     "webpack": "^5.88.2"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
     "@nut-up/cli": "workspace:*",
+    "@nut-up/cli-build": "workspace:*",
     "@nut-up/cli-dev": "workspace:*",
     "@nut-up/cli-lint": "workspace:*",
     "@nut-up/config-lint": "workspace:*",

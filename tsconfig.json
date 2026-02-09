@@ -2,6 +2,7 @@
   "files": [],
   "references": [
     { "path": "packages/cli" },
+    { "path": "packages/cli-build" },
     { "path": "packages/cli-dev" },
     { "path": "packages/config-babel" },
     { "path": "packages/config-lint" },

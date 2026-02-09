@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "@antfu/install-pkg": "^1.1.0",
+    "@nut-up/cli-build": "workspace:*",
     "@nut-up/cli-dev": "workspace:*",
     "@nut-up/cli-lint": "workspace:*",
     "@nut-up/config-lint": "workspace:*",
