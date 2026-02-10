@@ -44,7 +44,7 @@ export const validateFeatureNames = (featureNames: string[], only?: string) => {
         process.exit(21);
     }
     if (only && !featureNames.includes(only)) {
-        logger.error(`Feature ${only} is not configured in reskript config`);
+        logger.error(`Feature ${only} is not configured in nut config`);
         process.exit(21);
     }
 };

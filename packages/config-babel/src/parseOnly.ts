@@ -9,7 +9,7 @@ import pluginThrowExpressions from '@babel/plugin-proposal-throw-expressions';
 import {BabelConfigOptionsFilled} from './interface.js';
 import {compatPluginTarget, shouldEnable} from './utils.js';
 
-// 因为要转CJS，不能依赖`@reskript/core`提供的`compact`
+// 因为要转CJS，不能依赖`@nut-up/core`提供的`compact`
 const hasValue = (value: PluginItem | false): value is PluginItem => !!value;
 
 export default (options: BabelConfigOptionsFilled): TransformOptions => {

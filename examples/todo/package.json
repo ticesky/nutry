@@ -20,7 +20,7 @@
     "eslint": "^9.39.2",
     "stylelint": "^17.1.1",
     "typescript": "next",
-    "webpack": "^5.88.2"
+    "webpack": "^5.105.0"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",

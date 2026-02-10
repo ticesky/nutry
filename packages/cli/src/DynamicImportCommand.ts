@@ -31,7 +31,7 @@ export default abstract class DynamicImportCommand<A> extends Command {
             await run(args, rest);
         }
         catch (ex) {
-            logger.error('Command failed, you may submit a issue to https://github.com/ecomfe/reskript/issues/new');
+            logger.error('Command failed');
             logger.debug(ex);
             process.exit(99);
         }

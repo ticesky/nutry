@@ -6,7 +6,7 @@ import {compatPluginTarget, shouldEnable} from './utils.js';
 import getParseOnlyBabelConfigFilled from './parseOnly.js';
 import {BabelConfigOptionsFilled} from './interface.js';
 
-// 因为要转CJS，不能依赖`@reskript/core`提供的`compact`
+// 因为要转CJS，不能依赖`@nut-up/core`提供的`compact`
 const hasValue = (value: PluginItem | false): value is PluginItem => !!value;
 
 const requireDisplayName = (options: BabelConfigOptionsFilled) => {

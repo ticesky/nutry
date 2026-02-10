@@ -45,11 +45,8 @@ export type LoaderType =
     | 'cssModules'
     | 'postcss'
     | 'less'
-    | 'img'
-    | 'worker'
     | 'classNames'
     | 'cssExtract'
-    | 'svgo'
     | 'svgToComponent';
 
 export interface BuildInternals {

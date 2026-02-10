@@ -30,9 +30,9 @@
     "rollup": "^4.56.0",
     "stylelint": "^17.1.1",
     "typescript": "next",
-    "webpack": "^5.88.2",
-    "webpack-dev-server": "^4.15.1",
-    "webpack-merge": "^5.9.0"
+    "webpack": "^5.105.0",
+    "webpack-dev-server": "^5.2.3",
+    "webpack-merge": "^6.0.1"
   },
   "dependencies": {
     "ramda": "^0.32.0"

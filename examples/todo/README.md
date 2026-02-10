@@ -28,4 +28,3 @@ mkcert localhost
     1. 产出的文件里有一个`todo-index.[hash].js`的文件。
     2. 产出的`.png`文件比原始文件小，大小约为17KB左右。
 6. `npm run fix`可用，不会报错。
-7. 把`reskript.config.cjs`中的`{prepend: true}`去掉，构建应该会失败。

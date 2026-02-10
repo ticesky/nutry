@@ -40,7 +40,7 @@ const checkSettingsExists = (file?: string) => {
 };
 
 const locateSettings = (cwd: string): string | null => {
-    const file = SETTINGS_EXTENSIONS.map(v => path.join(cwd, 'reskript.config' + v)).find(existsSync);
+    const file = SETTINGS_EXTENSIONS.map(v => path.join(cwd, 'nut.config' + v)).find(existsSync);
     return file ?? null;
 };
 
@@ -49,7 +49,7 @@ type ResolveProjectSettingsOptions = CommandInput & {specifiedFile?: string};
 const importSettings = async (options: ResolveProjectSettingsOptions): Promise<ProjectSettings> => {
     const {specifiedFile, ...cmd} = options;
     const {resolved, value: {default: userSettings}} = await importUserModule<{default: UserSettings}>(
-        specifiedFile ? [specifiedFile] : SETTINGS_EXTENSIONS.map(v => path.join(cmd.cwd, 'reskript.config' + v)),
+        specifiedFile ? [specifiedFile] : SETTINGS_EXTENSIONS.map(v => path.join(cmd.cwd, 'nut.config' + v)),
         {default: {driver: 'webpack'}}
     );
 
