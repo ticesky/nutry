@@ -257,10 +257,10 @@ export const createPortal = (): Application => {
             <!DOCTYPE html>
             <html>
                 <head>
-                    <title>reSKRipt Portal</title>
+                    <title>Portal</title>
                 </head>
                 <body>
-                    <h1>reSKRipt Portal</h1>
+                    <h1>Portal</h1>
                     <p>We don't have an UI for portal yet.</p>
                 </body>
             </html>

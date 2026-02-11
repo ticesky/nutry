@@ -1,1 +1,2 @@
-pnpm run build:clean && pnpm lint-staged
+pnpm -F config-lint build
+pnpm lint-staged

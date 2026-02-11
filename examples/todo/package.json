@@ -7,7 +7,7 @@
     "start": "nut dev",
     "build": "rm -rf node_modules/.cache && nut build --clean --strict --build-target=stable",
     "analyze": "nut build --clean --strict --analyze --build-target=stable",
-    "linter": "nut lint --strict",
+    "lint": "nut lint --strict",
     "fix": "echo '' >> src/components/App/index.less && nut lint --fix"
   },
   "keywords": [],

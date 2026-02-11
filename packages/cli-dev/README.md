@@ -42,7 +42,7 @@ export const run = async (cmd: DevCommandLineArgs): Promise<void> => {
     // 2. 准备环境（加载 .env 文件等）
     await prepareEnvironment(cmd.cwd, cmd.mode, cmd.envFiles);
 
-    // 3. 读取项目配置 (reskript.config.ts)
+    // 3. 读取项目配置 (nut.config.ts)
     const projectSettings = await readProjectSettings({
         commandName: 'dev',
         specifiedFile: cmd.configFile,
@@ -230,7 +230,7 @@ export const restartable = (start: () => Promise<() => Promise<void>>) => {
 **设计要点：**
 - 防抖处理：避免配置快速变化时频繁重启
 - 优雅停止：等待当前服务器完全停止后再启动新服务器
-- 配置监听：通过 `chokidar` 监听 `reskript.config.ts` 变化
+- 配置监听：通过 `chokidar` 监听 `nut.config.ts` 变化
 
 ## 完整执行示例
 
@@ -255,7 +255,7 @@ nut dev --entry=index --host=localhost --open
    ↓
 5. prepareEnvironment() 加载 .env 文件
    ↓
-6. readProjectSettings() 读取 reskript.config.ts
+6. readProjectSettings() 读取 nut.config.ts
    ↓
 7. createStart() 创建启动函数
    ├─ 收集入口文件 (src/entries/index.tsx)

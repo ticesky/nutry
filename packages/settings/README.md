@@ -4,7 +4,7 @@
 
 ## 概述
 
-`@nut-up/settings` 是 nut-up 构建工具的配置管理层，负责处理 `reskript.config.ts` 配置文件。它提供配置读取、Schema 校验、默认值填充、插件应用、文件监听等完整的配置生命周期管理。
+`@nut-up/settings` 是 nut-up 构建工具的配置管理层，负责处理 `nut.config.ts` 配置文件。它提供配置读取、Schema 校验、默认值填充、插件应用、文件监听等完整的配置生命周期管理。
 
 ## 整体架构
 
@@ -69,7 +69,7 @@ const importSettings = async (options: ResolveProjectSettingsOptions): Promise<P
     const {resolved, value: {default: userSettings}} = await importUserModule<{default: UserSettings}>(
         specifiedFile 
             ? [specifiedFile] 
-            : SETTINGS_EXTENSIONS.map(v => path.join(cmd.cwd, 'reskript.config' + v)),
+            : SETTINGS_EXTENSIONS.map(v => path.join(cmd.cwd, 'nut.config' + v)),
         {default: {driver: 'webpack'}}
     );
 
@@ -158,7 +158,7 @@ const fillWebpackBuildSettings = (settings?): WebpackBuildSettings => {
         thirdParty: false,
         reportLintErrors: true,
         largeAssetSize: 8 * 1024,
-        appTitle: 'Reskript App',
+        appTitle: 'App',
         transformEntryHtml: (html: string) => html,
         excludeFeatures: ['dev'],
         finalize: config => config,
@@ -187,7 +187,7 @@ const fillWebpackDevServerSettings = (settings?): WebpackDevServerSettings => {
 
 ## 配置文件结构
 
-### reskript.config.ts
+### nut.config.ts
 
 ```typescript
 import {configure} from '@nut-up/settings';
@@ -367,8 +367,8 @@ export * from './interface/index.js';
 ## 配置文件搜索顺序
 
 1. 命令行指定的 `--config` 文件
-2. `reskript.config.ts`
-3. `reskript.config.mjs`
+2. `nut.config.ts`
+3. `nut.config.mjs`
 
 ## 设计优势
 

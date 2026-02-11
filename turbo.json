@@ -1,0 +1,19 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": ["**/.env.*local"],
+  "tasks": {
+    "build": {
+      // 核心：运行当前包的 build 前，先运行依赖包(^)的 build
+      "dependsOn": ["^build"],
+      // 缓存产物：下次没改动时直接从这里恢复，不再运行命令
+      "outputs": ["dist/**", "lib/**", "build/**"],
+    },
+    "lint": {
+      "dependsOn": ["build"],
+      "outputs": []
+    },
+    "clean": {
+      "cache": false
+    }
+  }
+}

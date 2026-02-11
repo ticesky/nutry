@@ -9,10 +9,10 @@
   },
   "license": "ISC",
   "scripts": {
-    "build": "tsc -b && pnpm -r --if-present run postbuild",
-    "clean": "tsc -b --clean && pnpm -r --if-present run clean:extra",
+    "build": "turbo run build --filter=./packages/*",
+    "clean": "turbo run clean",
     "build:clean": "pnpm run clean && pnpm run build",
-    "lint": "pnpm run build:clean && pnpm -r --parallel --no-bail run lint",
+    "lint": "turbo run lint --filter=./packages/*",
     "prepare": "husky"
   },
   "devDependencies": {
@@ -29,6 +29,7 @@
     "lint-staged": "^16.2.7",
     "rollup": "^4.56.0",
     "stylelint": "^17.1.1",
+    "turbo": "^2.8.5",
     "typescript": "next",
     "webpack": "^5.105.0",
     "webpack-dev-server": "^5.2.3",
@@ -37,6 +38,7 @@
   "dependencies": {
     "ramda": "^0.32.0"
   },
+  "packageManager": "pnpm@10.0.0",
   "pnpm": {
     "packageExtensions": {
       "stylelint-config-standard@*": {

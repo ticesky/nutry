@@ -10,6 +10,7 @@ dist
 
 # TypeScript incremental build cache
 **/*.tsbuildinfo
+**/.turbo
 
 # SSL
 localhost-key.pem
