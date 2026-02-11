@@ -16,7 +16,7 @@ const SHARED_BUILD_SETTINGS = {
     thirdParty: false,
     reportLintErrors: true,
     largeAssetSize: 8 * 1024,
-    appTitle: 'Reskript App',
+    appTitle: 'App',
     transformEntryHtml: (html: string) => html,
     excludeFeatures: ['dev'],
 };

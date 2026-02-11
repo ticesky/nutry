@@ -17,7 +17,7 @@ export default configure(
             },
         },
         build: {
-            appTitle: 'TodoMVC - reSKRipt',
+            appTitle: 'TodoMVC',
             favicon: path.join(path.dirname(fileURLToPath(import.meta.url)), 'favicon.ico'),
             appContainerId: 'root',
             uses: ['emotion', 'tailwind'],

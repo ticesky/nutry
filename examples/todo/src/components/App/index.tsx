@@ -86,7 +86,7 @@ export default function App() {
                     <WorkerStatus />
                     {todos.length} things waiting
                 </span>
-                {!!skr.features.batch && <BatchLabel onFinish={requestList} />}
+                {!!nut.features.batch && <BatchLabel onFinish={requestList} />}
             </Meta>
             <List dataSource={todos} onToggleItem={toggleItem} />
         </Layout>

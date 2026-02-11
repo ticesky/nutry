@@ -3,7 +3,7 @@ export {
     BuildEntry,
     BuildEnv,
     CommandName,
-    ReskriptDriver,
+    Driver,
     RuntimeBuildEnv,
     WebpackBuildEntry,
 } from './shared.js';

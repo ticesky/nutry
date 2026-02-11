@@ -8,7 +8,7 @@ import {
     Listener,
     Observe,
     ClientProjectSettings,
-    ReskriptDriver,
+    Driver,
     CommandInput,
 } from './interface/index.js';
 import validate from './validate.js';
@@ -160,6 +160,6 @@ export const strictCheckRequiredDependency = async (projectSettings: ProjectSett
 
 export function configure(driver: 'webpack', settings: WebpackUserSetting): UserSettings;
  
-export function configure(driver: ReskriptDriver, settings: any) {
+export function configure(driver: Driver, settings: any) {
     return {...settings, driver} as UserSettings;
 }

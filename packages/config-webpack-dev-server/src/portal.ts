@@ -18,10 +18,10 @@ export const createPortal = (): Application => {
                 <html>
                     <head>
                         <meta charset="UTF-8">
-                        <title>reSKRipt Portal</title>
+                        <title>Portal</title>
                     </head>
                     <body>
-                        <h1>reSKRipt Portal</h1>
+                        <h1>Portal</h1>
                         <p>We don't have an UI for portal yet.</p>
                     </body>
                 </html>

@@ -91,9 +91,9 @@ declare module '*.svg?react' {
 }
 
 // 全局替换
-interface ReskriptGlobal {
+interface NutGlobal {
     features: Record<string, unknown>;
     build: {version: string, time: string, target: string};
 }
 
-declare const skr: ReskriptGlobal;
+declare const nut: NutGlobal;

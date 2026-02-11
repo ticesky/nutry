@@ -25,7 +25,7 @@ export const constructDefines = ({env, features, mode, buildVersion, buildTarget
 
     return {
         ...toDefines(env, 'process.env'),
-        ...toDefines(features, 'skr.features'),
-        ...toDefines(buildInfo, 'skr.build'),
+        ...toDefines(features, 'nut.features'),
+        ...toDefines(buildInfo, 'nut.build'),
     };
 };

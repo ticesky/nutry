@@ -44,7 +44,7 @@ const computeCacheKey = async (entry: BuildContext): Promise<string> => {
     hash.update(entry.mode);
     hash.update(entry.hostPackageName);
     hash.update(entry.cwd);
-    // `reSKRipt`自己的版本信息等
+    // `nut-up`自己的版本信息等
     await updateHashFromFile(hash, path.join(dirFromImportMeta(import.meta.url), '..', '..', 'package.json'));
 
     if (entry.projectSettings.from) {

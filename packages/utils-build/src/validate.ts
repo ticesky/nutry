@@ -46,7 +46,7 @@ const checkPreCommitHookWhenLintDisabled = async (cwd: string) => {
 
     if (!packageConfig?.husky?.hooks?.['pre-commit']) {
         const warning = `
-            This project has reportLintErrors option disabled in reSKRipt config,
+            This project has reportLintErrors option disabled in nut config,
             and there is no pre-commit hook to lint your files,
             you should at least install husky to enable pre-commit hook.
 
@@ -58,7 +58,7 @@ const checkPreCommitHookWhenLintDisabled = async (cwd: string) => {
 
             And create hook in your project root:
 
-            npx --no-install husky add .husky/pre-commit "npx --no-install skr lint --staged --fix --auto-stage"
+            npx --no-install husky add .husky/pre-commit "npx --no-install nut lint --staged --fix --auto-stage"
         `;
         logger.warn(warning);
         process.exit(21);

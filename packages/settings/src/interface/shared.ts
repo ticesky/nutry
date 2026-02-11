@@ -3,7 +3,7 @@ import {ProjectSettings, WebpackProjectSettings} from './project.js';
 
 export type CommandName = 'build' | 'dev' | 'play' | 'test' | 'lint' | 'babel';
 
-export type ReskriptDriver = 'webpack' | 'vite';
+export type Driver = 'webpack' | 'vite';
 
 export interface BuildEnv<S extends ProjectSettings> extends WorkModeAware {
     // 调用工具时的子命令
