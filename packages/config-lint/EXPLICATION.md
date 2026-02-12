@@ -1,15 +1,15 @@
-# @nut-up/config-lint
+# @nutry/config-lint
 
 代码检查配置包，提供 ESLint 和 StyleLint 的预设配置。
 
 ## 概述
 
-`@nut-up/config-lint` 是 nut-up 构建工具的代码检查配置层，提供开箱即用的 ESLint 和 StyleLint 配置。它集成了 TypeScript、React、React Hooks、JSX A11y 等规则，以及 Less/SCSS 样式检查规则。
+`@nutry/config-lint` 是 nutry 构建工具的代码检查配置层，提供开箱即用的 ESLint 和 StyleLint 配置。它集成了 TypeScript、React、React Hooks、JSX A11y 等规则，以及 Less/SCSS 样式检查规则。
 
 ## 整体架构
 
 ```
-@nut-up/config-lint
+@nutry/config-lint
 ├─ index.ts              # 入口，统一导出
 │   ├─ getScriptLintConfig()      # 获取 ESLint 配置
 │   ├─ getStyleLintConfig()       # 获取 StyleLint 配置
@@ -106,7 +106,7 @@ export const getStyleLintBaseConfig = ({cwd}: BaseConfigOptions): StyleLintConfi
 ```javascript
 // eslint.config.mjs
 import {defineConfig} from 'eslint/config';
-import {default as baseConfig} from '@nut-up/config-lint/eslint';
+import {default as baseConfig} from '@nutry/config-lint/eslint';
 
 export default defineConfig(
     ...baseConfig,
@@ -122,7 +122,7 @@ export default defineConfig(
 ### 在 Webpack 插件中使用
 
 ```typescript
-import {getScriptLintBaseConfig, getStyleLintBaseConfig} from '@nut-up/config-lint';
+import {getScriptLintBaseConfig, getStyleLintBaseConfig} from '@nutry/config-lint';
 
 // ESLint 插件配置
 const eslintOptions = {

@@ -1,4 +1,4 @@
-import {ProjectAware} from '@nut-up/core';
+import {ProjectAware} from '@nutry/core';
 import {WebpackBuildSettings} from './build.js';
 import {WebpackDevServerSettings} from './devServer.js';
 import {FeatureMatrix} from './featureMatrix.js';

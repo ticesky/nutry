@@ -1,4 +1,4 @@
-import {stylelintConfig} from '@nut-up/config-lint';
+import {stylelintConfig} from '@nutry/config-lint';
 
 /** @type {import('stylelint').Config} */
 export default {

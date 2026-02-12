@@ -3,15 +3,15 @@ import {existsSync} from 'node:fs';
 import crypto from 'node:crypto';
 import fs from 'node:fs/promises';
 import {map} from 'ramda';
-import {compact, dirFromImportMeta, resolve, findGitRoot, pMap} from '@nut-up/core';
+import {compact, dirFromImportMeta, resolve, findGitRoot, pMap} from '@nutry/core';
 import {kebabCase} from 'change-case';
 import webpack, {EntryObject} from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import ESLintPlugin from 'eslint-webpack-plugin';
 import StyleLintPlugin from 'stylelint-webpack-plugin';
 // import InterpolateHTMLPlugin from '@reskript/webpack-plugin-interpolate-html';
-import {constructDefines, DefineContext} from '@nut-up/utils-build';
-import {getScriptLintBaseConfig, getStyleLintBaseConfig} from '@nut-up/config-lint';
+import {constructDefines, DefineContext} from '@nutry/utils-build';
+import {getScriptLintBaseConfig, getStyleLintBaseConfig} from '@nutry/config-lint';
 import {ConfigurationFactory, BuildContext} from '../interface.js';
 import {createHtmlPluginInstances, createTransformHtmlPluginInstance} from '../utils/html.js';
 import {convertToWebpackEntry} from '../utils/entry.js';
@@ -44,7 +44,7 @@ const computeCacheKey = async (entry: BuildContext): Promise<string> => {
     hash.update(entry.mode);
     hash.update(entry.hostPackageName);
     hash.update(entry.cwd);
-    // `nut-up`自己的版本信息等
+    // `nutry`自己的版本信息等
     await updateHashFromFile(hash, path.join(dirFromImportMeta(import.meta.url), '..', '..', 'package.json'));
 
     if (entry.projectSettings.from) {

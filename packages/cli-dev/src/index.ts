@@ -1,6 +1,6 @@
-import {watchProjectSettings, DevCommandLineArgs, readProjectSettings, ProjectSettings} from '@nut-up/settings';
-import {prepareEnvironment} from '@nut-up/core';
-import {EntryLocation} from '@nut-up/utils-build';
+import {watchProjectSettings, DevCommandLineArgs, readProjectSettings, ProjectSettings} from '@nutry/settings';
+import {prepareEnvironment} from '@nutry/core';
+import {EntryLocation} from '@nutry/utils-build';
 import {createBuildContext, prepareServerContext, restartable} from './utils.js';
 
 process.env.OPEN_MATCH_HOST_ONLY = 'true';
@@ -13,7 +13,7 @@ const createStartFn = async (cmd: DevCommandLineArgs, projectSettings: ProjectSe
         only: [cmd.entry],
     };
 
-    const importing = [import('@nut-up/config-webpack'), import('./webpack.js')] as const;
+    const importing = [import('@nutry/config-webpack'), import('./webpack.js')] as const;
     const [{collectEntries}, {start}] = await Promise.all(importing);
     const entries = await collectEntries(entryLocation);
     const buildContext = await createBuildContext({cmd, projectSettings, entries});

@@ -1,8 +1,8 @@
 import eslintTableFormatter from 'eslint-formatter-table';
 import {Linter, ESLint} from 'eslint';
 import {execa} from 'execa';
-import {logger, gitStatus, findGitRoot} from '@nut-up/core';
-import {LintCommandLineArgs} from '@nut-up/settings';
+import {logger, gitStatus, findGitRoot} from '@nutry/core';
+import {LintCommandLineArgs} from '@nutry/settings';
 import {ResolveOptions} from './interface.js';
 import lintScripts from './script.js';
 import lintStyles from './style.js';

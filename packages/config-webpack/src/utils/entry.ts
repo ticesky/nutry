@@ -1,5 +1,5 @@
 import {EntryObject} from 'webpack';
-import {AppEntry} from '@nut-up/utils-build';
+import {AppEntry} from '@nutry/utils-build';
 import {EntryConfig} from '../interface.js';
 
 export const convertToWebpackEntry = ({file, config}: AppEntry<EntryConfig>): EntryObject[string] => {

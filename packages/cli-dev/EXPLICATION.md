@@ -1,17 +1,17 @@
-# @nut-up/cli-dev
+# @nutry/cli-dev
 
 开发服务器命令包，提供 `nut dev` 命令的具体实现。
 
 ## 概述
 
-`@nut-up/cli-dev` 是 `nut dev` 命令的实现包，由 `@nut-up/cli` 动态导入调用。它负责启动 Webpack Dev Server，提供本地开发环境，支持热更新、代理配置、自动打开浏览器等功能。
+`@nutry/cli-dev` 是 `nut dev` 命令的实现包，由 `@nutry/cli` 动态导入调用。它负责启动 Webpack Dev Server，提供本地开发环境，支持热更新、代理配置、自动打开浏览器等功能。
 
 ## 整体架构
 
 ```
-@nut-up/cli (nut dev 命令)
+@nutry/cli (nut dev 命令)
     ↓ 动态导入
-@nut-up/cli-dev
+@nutry/cli-dev
     ├→ index.ts (入口，run 函数)
     │     ├→ 环境准备
     │     ├→ 读取项目配置
@@ -83,7 +83,7 @@ const createStart = async (cmd: DevCommandLineArgs, projectSettings: ProjectSett
     // 2. 根据驱动类型创建启动函数
     if (projectSettings.driver === 'webpack') {
         const [{collectEntries}, {start}] = await Promise.all([
-            import('@nut-up/config-webpack'),
+            import('@nutry/config-webpack'),
             import('./webpack.js')
         ]);
         return create({collectEntries, projectSettings, start});
@@ -202,7 +202,7 @@ export const restartable = (start: () => Promise<() => Promise<void>>) => {
     };
     
     return async () => {
-        logger.log('Detected nut-up config change, restarting dev server...');
+        logger.log('Detected nutry config change, restarting dev server...');
 
         // 防止重复触发
         if (context.nextStart) {
@@ -242,9 +242,9 @@ nut dev --entry=index --host=localhost --open
 **执行流程：**
 
 ```
-1. @nut-up/cli 解析命令行，匹配 DevCommand
+1. @nutry/cli 解析命令行，匹配 DevCommand
    ↓
-2. DynamicImportCommand 动态导入 @nut-up/cli-dev
+2. DynamicImportCommand 动态导入 @nutry/cli-dev
    ↓
 3. run(cmd) 被调用
    ├─ cmd.entry = 'index'
@@ -337,11 +337,11 @@ interface BuildContext<C, S> {
 ```json
 {
   "dependencies": {
-    "@nut-up/config-webpack": "workspace:*",
-    "@nut-up/config-webpack-dev-server": "workspace:*",
-    "@nut-up/core": "workspace:*",
-    "@nut-up/settings": "workspace:*",
-    "@nut-up/utils-build": "workspace:*",
+    "@nutry/config-webpack": "workspace:*",
+    "@nutry/config-webpack-dev-server": "workspace:*",
+    "@nutry/core": "workspace:*",
+    "@nutry/settings": "workspace:*",
+    "@nutry/utils-build": "workspace:*",
     "better-opn": "^3.0.2",
     "proxy-agent": "^6.5.0"
   }
@@ -349,41 +349,41 @@ interface BuildContext<C, S> {
 ```
 
 **关键依赖说明：**
-- **@nut-up/config-webpack**：Webpack 配置核心，提供 `createWebpackConfig`
-- **@nut-up/config-webpack-dev-server**：DevServer 配置，提供 `createWebpackDevServerConfig`
-- **@nut-up/core**：核心工具库（日志、环境准备等）
-- **@nut-up/settings**：项目配置读取和监听
-- **@nut-up/utils-build**：构建工具集（入口收集、环境创建等）
+- **@nutry/config-webpack**：Webpack 配置核心，提供 `createWebpackConfig`
+- **@nutry/config-webpack-dev-server**：DevServer 配置，提供 `createWebpackDevServerConfig`
+- **@nutry/core**：核心工具库（日志、环境准备等）
+- **@nutry/settings**：项目配置读取和监听
+- **@nutry/utils-build**：构建工具集（入口收集、环境创建等）
 - **better-opn**：跨平台打开浏览器
 - **proxy-agent**：HTTP 代理支持
 
-## 与 @nut-up/cli 的关系
+## 与 @nutry/cli 的关系
 
 ```
-@nut-up/cli
+@nutry/cli
     │
     │  DevCommand.execute()
     │      ↓
     │  DynamicImportCommand.importCommandPackage()
     │      ↓
-    │  resolve('@nut-up/cli-dev')
+    │  resolve('@nutry/cli-dev')
     │      ↓
     │  import('./dist/index.js')
     │      ↓
-    └─→ { run } ← @nut-up/cli-dev 导出
+    └─→ { run } ← @nutry/cli-dev 导出
             ↓
         run(commandLineArgs)
 ```
 
-- `@nut-up/cli` 负责命令行解析和参数收集
-- `@nut-up/cli-dev` 负责实际的开发服务器启动逻辑
+- `@nutry/cli` 负责命令行解析和参数收集
+- `@nutry/cli-dev` 负责实际的开发服务器启动逻辑
 - 通过动态导入实现按需加载，减少 CLI 包体积
 
 ## 模块职责图
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
-│                      @nut-up/cli-dev                         │
+│                      @nutry/cli-dev                         │
 ├──────────────────────────────────────────────────────────────┤
 │  index.ts                                                    │
 │  ├─ run()              命令入口，协调各模块                     │
@@ -416,4 +416,4 @@ interface BuildContext<C, S> {
 
 - 发布时只包含编译后的 `dist` 目录
 - 提供 ES Module 和 TypeScript 类型定义
-- 作为内部依赖被 `@nut-up/cli` 动态导入
+- 作为内部依赖被 `@nutry/cli` 动态导入

@@ -1,17 +1,17 @@
-# @nut-up/cli-lint
+# @nutry/cli-lint
 
 代码检查命令包，提供 `nut lint` 命令的具体实现。
 
 ## 概述
 
-`@nut-up/cli-lint` 是 `nut lint` 命令的实现包，由 `@nut-up/cli` 动态导入调用。它负责执行 ESLint（脚本检查）和 StyleLint（样式检查），支持 Git 暂存区文件检查、自动修复等功能。
+`@nutry/cli-lint` 是 `nut lint` 命令的实现包，由 `@nutry/cli` 动态导入调用。它负责执行 ESLint（脚本检查）和 StyleLint（样式检查），支持 Git 暂存区文件检查、自动修复等功能。
 
 ## 整体架构
 
 ```
-@nut-up/cli (nut lint 命令)
+@nutry/cli (nut lint 命令)
     ↓ 动态导入
-@nut-up/cli-lint
+@nutry/cli-lint
     ├→ index.ts (入口，run 函数)
     │     ├→ 获取 Git 状态
     │     ├→ 并行执行脚本和样式检查
@@ -159,8 +159,8 @@ export default {
 ```json
 {
   "dependencies": {
-    "@nut-up/config-lint": "workspace:*",
-    "@nut-up/core": "workspace:*",
+    "@nutry/config-lint": "workspace:*",
+    "@nutry/core": "workspace:*",
     "eslint-formatter-pretty": "^7.0.0",
     "eslint-formatter-table": "^7.32.1",
     "execa": "^9.6.1",
@@ -173,7 +173,7 @@ export default {
 
 | 依赖 | 用途 |
 |------|------|
-| `@nut-up/config-lint` | ESLint/StyleLint 配置 |
+| `@nutry/config-lint` | ESLint/StyleLint 配置 |
 | `eslint-formatter-table` | 表格格式输出 |
 | `eslint-formatter-pretty` | 美化输出 |
 | `execa` | 执行 Git 命令 |

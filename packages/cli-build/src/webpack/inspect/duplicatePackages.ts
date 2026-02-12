@@ -1,7 +1,7 @@
 import {StatsCompilation} from 'webpack';
 import {uniq, reject, isNil} from 'ramda';
-import {readPackageConfig} from '@nut-up/core';
-import {BuildInspectSettings, SourceFilter} from '@nut-up/settings';
+import {readPackageConfig} from '@nutry/core';
+import {BuildInspectSettings, SourceFilter} from '@nutry/settings';
 import {RuleProcessor, isIncluded} from './utils.js';
 
 const extractUniqueModules = (compilations: StatsCompilation[]): string[] => {

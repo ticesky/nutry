@@ -1,7 +1,7 @@
 import path from 'node:path';
 import fs from 'node:fs';
 import {Cli, Builtins} from 'clipanion';
-import {logger, dirFromImportMeta} from '@nut-up/core';
+import {logger, dirFromImportMeta} from '@nutry/core';
 import BuildCommand from './BuildCommand.js';
 import DevCommand from './DevCommand.js';
 import LintCommand from './LintCommand.js';
@@ -12,7 +12,7 @@ const packageJsonContent = fs.readFileSync(
 );
 const {version} = JSON.parse(packageJsonContent) as {version: string};
 
-const cli = new Cli({binaryLabel: 'nut-up', binaryName: 'nut', binaryVersion: version});
+const cli = new Cli({binaryLabel: 'nutry', binaryName: 'nut', binaryVersion: version});
 
 cli.register(BuildCommand);
 cli.register(DevCommand);

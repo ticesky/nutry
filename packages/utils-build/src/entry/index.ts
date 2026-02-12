@@ -2,8 +2,8 @@ import path from 'node:path';
 import fs from 'node:fs/promises';
 import {existsSync} from 'node:fs';
 import escapeRegExp from 'escape-string-regexp';
-import {logger, pMap, compact} from '@nut-up/core';
-import {BuildEntry} from '@nut-up/settings';
+import {logger, pMap, compact} from '@nutry/core';
+import {BuildEntry} from '@nutry/settings';
 import {resolveEntry} from './resolve.js';
 import {AppEntry, EntryLocation, EntryOptions, BuildContext} from './interface.js';
 

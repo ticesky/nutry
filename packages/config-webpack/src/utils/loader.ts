@@ -1,6 +1,6 @@
-import {compact} from '@nut-up/core';
+import {compact} from '@nutry/core';
 import {RuleSetUseItem} from 'webpack';
-import {WebpackBuildEntry, LoaderType} from '@nut-up/settings';
+import {WebpackBuildEntry, LoaderType} from '@nutry/settings';
 import * as loaders from '../loaders/index.js';
 
 export const introduceLoader = (name: LoaderType, entry: WebpackBuildEntry): Promise<RuleSetUseItem | null> => {

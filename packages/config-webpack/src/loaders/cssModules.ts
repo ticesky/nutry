@@ -1,5 +1,5 @@
 import path from 'node:path';
-import {resolve} from '@nut-up/core';
+import {resolve} from '@nutry/core';
 import {hashSync} from 'hasha';
 import {kebabCase} from 'change-case';
 import {LoaderFactory} from '../interface.js';

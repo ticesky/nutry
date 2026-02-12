@@ -1,5 +1,5 @@
-import {BuildCommandLineArgs, ProjectSettings} from '@nut-up/settings';
-import {BuildContext} from '@nut-up/utils-build';
+import {BuildCommandLineArgs, ProjectSettings} from '@nutry/settings';
+import {BuildContext} from '@nutry/utils-build';
 
 export interface BuildRunOptions<C, S extends ProjectSettings> {
     cmd: BuildCommandLineArgs;

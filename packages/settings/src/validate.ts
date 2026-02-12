@@ -292,5 +292,5 @@ const schema = {
 } as Schema;
  
 export default (value: object | object[]): void => {
-    validate(schema, value, {name: 'Your nut-up config'});
+    validate(schema, value, {name: 'Your nutry config'});
 };

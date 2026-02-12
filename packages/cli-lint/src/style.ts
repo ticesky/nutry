@@ -1,8 +1,8 @@
 import styleLint, {LintResult as StyleLintResult, Warning, WarningOptions} from 'stylelint';
 import {isEmpty} from 'ramda';
 import {ESLint, Linter} from 'eslint';
-import {resolveCacheLocation} from '@nut-up/core';
-import {getStyleLintBaseConfig} from '@nut-up/config-lint';
+import {resolveCacheLocation} from '@nutry/core';
+import {getStyleLintBaseConfig} from '@nutry/config-lint';
 import {ResolveOptions} from './interface.js';
 import {resolveLintFiles} from './utils.js';
 

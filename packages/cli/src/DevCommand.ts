@@ -1,7 +1,7 @@
 import {Option} from 'clipanion';
 import {isEnum} from 'typanion';
-import {WorkMode} from '@nut-up/core';
-import {DevCommandLineArgs, HostType} from '@nut-up/settings';
+import {WorkMode} from '@nutry/core';
+import {DevCommandLineArgs, HostType} from '@nutry/settings';
 import DynamicImportCommand from './DynamicImportCommand.js';
 
 export default class DevCommand extends DynamicImportCommand<DevCommandLineArgs> {
@@ -11,7 +11,7 @@ export default class DevCommand extends DynamicImportCommand<DevCommandLineArgs>
         description: 'Start dev server for debugging',
     };
 
-    packageName = '@nut-up/cli-dev';
+    packageName = '@nutry/cli-dev';
 
     cwd = Option.String('--cwd', process.cwd(), {description: 'override current working directory'});
 

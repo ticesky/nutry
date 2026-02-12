@@ -1,4 +1,4 @@
-import {WorkModeAware} from '@nut-up/core';
+import {WorkModeAware} from '@nutry/core';
 import {ProjectSettings, WebpackProjectSettings} from './project.js';
 
 export type CommandName = 'build' | 'dev' | 'play' | 'test' | 'lint' | 'babel';

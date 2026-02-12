@@ -1,7 +1,7 @@
 import {Option} from 'clipanion';
 import {isEnum} from 'typanion';
-import {WorkMode} from '@nut-up/core';
-import {BuildCommandLineArgs} from '@nut-up/settings';
+import {WorkMode} from '@nutry/core';
+import {BuildCommandLineArgs} from '@nutry/settings';
 import DynamicImportCommand from './DynamicImportCommand.js';
 
 export default class BuildCommand extends DynamicImportCommand<BuildCommandLineArgs> {
@@ -11,7 +11,7 @@ export default class BuildCommand extends DynamicImportCommand<BuildCommandLineA
         description: 'Build application using webpack',
     };
 
-    packageName = '@nut-up/cli-build';
+    packageName = '@nutry/cli-build';
 
     cwd = Option.String('--cwd', process.cwd(), {description: 'override current working directory'});
 

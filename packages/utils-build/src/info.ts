@@ -2,8 +2,8 @@ import path from 'node:path';
 import {existsSync} from 'node:fs';
 import childProcess from 'node:child_process';
 import {promisify} from 'node:util';
-import {logger} from '@nut-up/core';
-import {BuildEnv, ProjectSettings, RuntimeBuildEnv} from '@nut-up/settings';
+import {logger} from '@nutry/core';
+import {BuildEnv, ProjectSettings, RuntimeBuildEnv} from '@nutry/settings';
 
 const exec = promisify(childProcess.exec);
 

@@ -1,15 +1,15 @@
-# @nut-up/config-babel
+# @nutry/config-babel
 
 Babel 配置包，提供完整的 Babel 预设和插件配置。
 
 ## 概述
 
-`@nut-up/config-babel` 是 nut-up 构建工具的 Babel 配置层，负责生成用于 JavaScript/TypeScript 转译的 Babel 配置。它支持 React、TypeScript、装饰器、可选链等现代语法特性，并根据不同的构建模式（开发/生产）和使用场景（应用/库）提供优化配置。
+`@nutry/config-babel` 是 nutry 构建工具的 Babel 配置层，负责生成用于 JavaScript/TypeScript 转译的 Babel 配置。它支持 React、TypeScript、装饰器、可选链等现代语法特性，并根据不同的构建模式（开发/生产）和使用场景（应用/库）提供优化配置。
 
 ## 整体架构
 
 ```
-@nut-up/config-babel
+@nutry/config-babel
 ├─ index.ts              # 入口，核心 API
 │   ├─ getBabelConfig()           # 完整 Babel 配置
 │   ├─ getTransformBabelConfig()  # 转换配置
@@ -206,7 +206,7 @@ const DEFAULT_OPTIONS: BabelConfigOptionsFilled = {
 ### 基本使用
 
 ```typescript
-import {getBabelConfig} from '@nut-up/config-babel';
+import {getBabelConfig} from '@nutry/config-babel';
 
 const config = getBabelConfig({
     mode: 'production',
@@ -284,8 +284,8 @@ export type { BabelConfigOptions };
     "@babel/preset-react": "^7.28.5",
     "@babel/preset-typescript": "^7.28.5",
     "@emotion/babel-plugin": "^11.13.5",
-    "@nut-up/core": "workspace:*",
-    "@nut-up/settings": "workspace:*",
+    "@nutry/core": "workspace:*",
+    "@nutry/settings": "workspace:*",
     "@reskript/babel-plugin-add-react-display-name": "^6.2.1",
     "@reskript/babel-plugin-debug-react-component-file-name": "^6.2.1",
     "babel-plugin-import": "^1.13.8",

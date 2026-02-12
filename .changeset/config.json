@@ -1,0 +1,25 @@
+{
+  "$schema": "https://unpkg.com/@changesets/config@3.1.2/schema.json",
+  "changelog": "@changesets/cli/changelog",
+  "commit": false,
+  "fixed": [
+    [
+      "@nutry/cli",
+      "@nutry/cli-build",
+      "@nutry/cli-dev",
+      "@nutry/cli-lint",
+      "@nutry/config-babel",
+      "@nutry/config-lint",
+      "@nutry/config-webpack",
+      "@nutry/config-webpack-dev-server",
+      "@nutry/core",
+      "@nutry/settings",
+      "@nutry/utils-build"
+    ]
+  ],
+  "linked": [],
+  "access": "public",
+  "baseBranch": "master",
+  "updateInternalDependencies": "patch",
+  "ignore": []
+}

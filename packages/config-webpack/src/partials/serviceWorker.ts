@@ -1,7 +1,7 @@
 import path from 'node:path';
 import fs from 'node:fs/promises';
 import {InjectManifest} from 'workbox-webpack-plugin';
-import {injectIntoHtml, serviceWorkerRegistryScript} from '@nut-up/utils-build';
+import {injectIntoHtml, serviceWorkerRegistryScript} from '@nutry/utils-build';
 import {TransformHtmlWebpackPlugin} from '../utils/plugin.js';
 import {ConfigurationFactory} from '../interface.js';
 

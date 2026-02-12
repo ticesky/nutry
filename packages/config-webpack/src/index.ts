@@ -1,14 +1,14 @@
 import path from 'node:path';
-import {pMap, logger, dirFromImportMeta} from '@nut-up/core';
+import {pMap, logger, dirFromImportMeta} from '@nutry/core';
 import {Configuration} from 'webpack';
-import {warnAndExitOnInvalidFinalizeReturn, BuildInternals, FinalizableWebpackConfiguration} from '@nut-up/settings';
+import {warnAndExitOnInvalidFinalizeReturn, BuildInternals, FinalizableWebpackConfiguration} from '@nutry/settings';
 import {
     EntryOptions,
     AppEntry,
     EntryLocation,
     collectAppEntries,
     hasServiceWorker,
-} from '@nut-up/utils-build';
+} from '@nutry/utils-build';
 import * as rules from './rules/index.js';
 import {mergeBuiltin} from './utils/merge.js';
 import {createHtmlPluginInstances, createTransformHtmlPluginInstance} from './utils/html.js';

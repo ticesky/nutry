@@ -1,1 +1,1 @@
-/// <reference types="@nut-up/settings/client" />
+/// <reference types="@nutry/settings/client" />

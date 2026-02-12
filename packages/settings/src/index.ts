@@ -2,7 +2,7 @@ import path from 'node:path';
 import {existsSync} from 'node:fs';
 import {hashFile} from 'hasha';
 import chokidar from 'chokidar';
-import {importUserModule, logger, PackageInfo, readPackageConfig} from '@nut-up/core';
+import {importUserModule, logger, PackageInfo, readPackageConfig} from '@nutry/core';
 import {
     ProjectSettings,
     Listener,

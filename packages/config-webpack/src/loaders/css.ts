@@ -1,4 +1,4 @@
-import {resolve} from '@nut-up/core';
+import {resolve} from '@nutry/core';
 import {LoaderFactory} from '../interface.js';
 
 const factory: LoaderFactory = async entry => {

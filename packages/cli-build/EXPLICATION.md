@@ -1,17 +1,17 @@
-# @nut-up/cli-build
+# @nutry/cli-build
 
 构建命令包，提供 `nut build` 命令的具体实现。
 
 ## 概述
 
-`@nut-up/cli-build` 是 `nut build` 命令的实现包，由 `@nut-up/cli` 动态导入调用。它负责执行 Webpack 生产构建，支持多特性矩阵构建、增量构建、Bundle 分析等功能。
+`@nutry/cli-build` 是 `nut build` 命令的实现包，由 `@nutry/cli` 动态导入调用。它负责执行 Webpack 生产构建，支持多特性矩阵构建、增量构建、Bundle 分析等功能。
 
 ## 整体架构
 
 ```
-@nut-up/cli (nut build 命令)
+@nutry/cli (nut build 命令)
     ↓ 动态导入
-@nut-up/cli-build
+@nutry/cli-build
     ├→ index.ts (入口，run 函数)
     │     ├→ 环境准备
     │     ├→ 读取项目配置
@@ -193,11 +193,11 @@ interface BuildCommandLineArgs {
 ```json
 {
   "dependencies": {
-    "@nut-up/config-lint": "workspace:*",
-    "@nut-up/config-webpack": "workspace:*",
-    "@nut-up/core": "workspace:*",
-    "@nut-up/settings": "workspace:*",
-    "@nut-up/utils-build": "workspace:*",
+    "@nutry/config-lint": "workspace:*",
+    "@nutry/config-webpack": "workspace:*",
+    "@nutry/core": "workspace:*",
+    "@nutry/settings": "workspace:*",
+    "@nutry/utils-build": "workspace:*",
     "kolorist": "^1.8.0",
     "matcher": "^6.0.0",
     "pretty-bytes": "^7.1.0",
@@ -211,23 +211,23 @@ interface BuildCommandLineArgs {
 
 | 依赖 | 用途 |
 |------|------|
-| `@nut-up/config-webpack` | Webpack 配置生成 |
+| `@nutry/config-webpack` | Webpack 配置生成 |
 | `webpack-bundle-analyzer` | Bundle 分析 |
 | `tty-table` | 终端表格输出 |
 | `pretty-bytes` | 文件大小格式化 |
 
-## 与 @nut-up/cli 的关系
+## 与 @nutry/cli 的关系
 
 ```
-@nut-up/cli
+@nutry/cli
     │
     │  BuildCommand.execute()
     │      ↓
     │  DynamicImportCommand.importCommandPackage()
     │      ↓
-    │  resolve('@nut-up/cli-build')
+    │  resolve('@nutry/cli-build')
     │      ↓
-    └─→ { run } ← @nut-up/cli-build 导出
+    └─→ { run } ← @nutry/cli-build 导出
             ↓
         run(commandLineArgs)
 ```

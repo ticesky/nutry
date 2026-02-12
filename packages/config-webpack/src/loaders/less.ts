@@ -1,5 +1,5 @@
-import {resolve} from '@nut-up/core';
-import {lessConfig} from '@nut-up/utils-build';
+import {resolve} from '@nutry/core';
+import {lessConfig} from '@nutry/utils-build';
 import less from 'less';
 import {LoaderFactory} from '../interface.js';
 

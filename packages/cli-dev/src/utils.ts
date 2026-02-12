@@ -1,6 +1,6 @@
-import {BuildEnv, DevCommandLineArgs, DevServerSettings, ProjectSettings} from '@nut-up/settings';
-import {BuildContext, resolveDevHost, createRuntimeBuildEnv, AppEntry} from '@nut-up/utils-build';
-import {logger, readPackageConfig} from '@nut-up/core';
+import {BuildEnv, DevCommandLineArgs, DevServerSettings, ProjectSettings} from '@nutry/settings';
+import {BuildContext, resolveDevHost, createRuntimeBuildEnv, AppEntry} from '@nutry/utils-build';
+import {logger, readPackageConfig} from '@nutry/core';
 
 const resolvePublicPath = async (hostType: DevCommandLineArgs['host'], settings: DevServerSettings) => {
     if (!hostType) {
@@ -84,7 +84,7 @@ export const restartable = (start: () => RestartContext['inProgress']) => {
         nextStart: null,
     };
     return async () => {
-        logger.log('Detected nut-up config change, restarting dev server...');
+        logger.log('Detected nutry config change, restarting dev server...');
 
         if (context.nextStart) {
             return;

@@ -1,5 +1,5 @@
 import {type AcceptedPlugin} from 'postcss';
-import {compact, resolveFrom} from '@nut-up/core';
+import {compact, resolveFrom} from '@nutry/core';
 import presetEnv from 'postcss-preset-env';
 import nano from 'cssnano';
 

@@ -1,7 +1,6 @@
 import HtmlWebpackPlugin, {Options as HtmlOptions} from 'html-webpack-plugin';
-import {BuildEntry} from '@nut-up/settings';
-import {constructEntryTemplateData, AppEntry} from '@nut-up/utils-build';
-import {WebpackPluginInstance} from 'webpack';
+import {BuildEntry} from '@nutry/settings';
+import {constructEntryTemplateData, AppEntry} from '@nutry/utils-build';
 import {EntryConfig, BuildContext} from '../interface.js';
 import {TransformHtmlWebpackPlugin} from './plugin.js';
 
@@ -61,7 +60,7 @@ const createHTMLPluginWith = (buildEntry: BuildEntry) => {
     };
 };
 
-export const createHtmlPluginInstances = (buildContext: BuildContext): WebpackPluginInstance[] => {
+export const createHtmlPluginInstances = (buildContext: BuildContext): HtmlWebpackPlugin[] => {
     const {isDefaultTarget, buildTarget, entries} = buildContext;
     const createInstanceWithSuffix = createHTMLPluginWith(buildContext);
     const pluginsWithinTarget = entries.map(createInstanceWithSuffix('-' + buildTarget));

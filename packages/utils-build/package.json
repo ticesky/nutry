@@ -1,5 +1,5 @@
 {
-    "name": "@nut-up/utils-build",
+    "name": "@nutry/utils-build",
     "version": "0.0.1",
     "license": "ISC",
     "type": "module",
@@ -14,6 +14,9 @@
     "files": [
         "dist"
     ],
+    "publishConfig": {
+        "access": "public"
+    },
     "scripts": {
         "build": "tsc -b",
         "clean": "tsc -b --clean && pnpm run clean:extra",
@@ -26,9 +29,9 @@
         "postcss": "^8.5.6"
     },
     "dependencies": {
-        "@nut-up/config-lint": "workspace:*",
-        "@nut-up/core": "workspace:*",
-        "@nut-up/settings": "workspace:*",
+        "@nutry/config-lint": "workspace:*",
+        "@nutry/core": "workspace:*",
+        "@nutry/settings": "workspace:*",
         "change-case": "^5.4.4",
         "cssnano": "^7.1.2",
         "escape-string-regexp": "^5.0.0",

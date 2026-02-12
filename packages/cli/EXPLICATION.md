@@ -1,10 +1,10 @@
-# @nut-up/cli
+# @nutry/cli
 
 命令行工具包，提供 `nut` 命令的核心框架和命令注册系统。
 
 ## 概述
 
-`@nut-up/cli` 是 nut-up 构建工具的命令行入口，使用 [clipanion](https://github.com/arcanis/clipanion) 框架实现。它采用**动态导入**设计，将具体的构建逻辑延迟到运行时加载，保持 CLI 包本身的轻量级。
+`@nutry/cli` 是 nutry 构建工具的命令行入口，使用 [clipanion](https://github.com/arcanis/clipanion) 框架实现。它采用**动态导入**设计，将具体的构建逻辑延迟到运行时加载，保持 CLI 包本身的轻量级。
 
 ## 整体架构
 
@@ -22,8 +22,8 @@ Cli 实例 (clipanion)
 DynamicImportCommand (基类)
     ↓
 动态导入命令包
-    ├→ @nut-up/cli-build (build命令)
-    └→ @nut-up/cli-dev (dev命令)
+    ├→ @nutry/cli-build (build命令)
+    └→ @nutry/cli-dev (dev命令)
 ```
 
 ## 执行流程详解
@@ -45,7 +45,7 @@ run();
 
 ```typescript
 const cli = new Cli({
-    binaryLabel: 'nut-up',
+    binaryLabel: 'nutry',
     binaryName: 'nut',
     binaryVersion: version  // 从 package.json 读取
 });
@@ -81,13 +81,13 @@ export const run = async () => {
 两个命令都继承自 `DynamicImportCommand`，定义了丰富的命令行选项。
 
 **BuildCommand** (`nut build`)：
-- 实现包：`@nut-up/cli-build`
+- 实现包：`@nutry/cli-build`
 - 默认 mode：`production`
 - 特殊选项：`--watch`, `--analyze`, `--profile`, `--strict`
 - 共 17 个命令行选项
 
 **DevCommand** (`nut dev`)：
-- 实现包：`@nut-up/cli-dev`
+- 实现包：`@nutry/cli-dev`
 - 默认 mode：`development`
 - 特殊选项：`--host`, `--entry`, `--open`, `--strict`
 - 共 11 个命令行选项
@@ -128,7 +128,7 @@ configFile = Option.String(
      ↓
 4. 如果 MODULE_NOT_FOUND 错误：
      ├─ 检查是否能自动安装 (canAutoInstall)
-     │   ├─ @nut-up/cli 版本是否精确
+     │   ├─ @nutry/cli 版本是否精确
      │   ├─ 项目有没有 git 初始化
      │   └─ git root 有没有 lock 文件
      │
@@ -198,7 +198,7 @@ nut build --cwd=/path/to/project --mode=development --clean
 4. BuildCommand.execute() 执行
    ↓
 5. DynamicImportCommand.execute() 执行
-   - packageName = '@nut-up/cli-build'
+   - packageName = '@nutry/cli-build'
    - buildCommandLineArgs() 收集参数：
      {
        cwd: '/path/to/project',
@@ -208,12 +208,12 @@ nut build --cwd=/path/to/project --mode=development --clean
      }
    ↓
 6. importCommandPackage() 动态导入
-   - 尝试 resolve('@nut-up/cli-build')
+   - 尝试 resolve('@nutry/cli-build')
    - 如果找不到，自动安装（如果条件允许）
    - 导入包的默认导出的 run 函数
    ↓
 7. 调用 run(commandLineArgs, undefined)
-   - 执行实际的构建逻辑 (在 @nut-up/cli-build 包中)
+   - 执行实际的构建逻辑 (在 @nutry/cli-build 包中)
    - 返回构建结果
    ↓
 8. 过程结束或错误处理
@@ -233,10 +233,10 @@ private async canAutoInstall() {
         return false;
     }
 
-    // 2. @nut-up/cli 版本必须精确匹配
+    // 2. @nutry/cli 版本必须精确匹配
     const packageConfig = await readPackageConfig(packageRoot);
     const dependencies = {...packageConfig.dependencies, ...packageConfig.devDependencies};
-    return dependencies['@nut-up/cli'] === this.cli.binaryVersion;
+    return dependencies['@nutry/cli'] === this.cli.binaryVersion;
     
     // 3. 项目需要 git 初始化 + 有 lock 文件
     const gitRoot = await findGitRoot();
@@ -350,9 +350,9 @@ DynamicImportCommand 的职责：
 {
   "dependencies": {
     "@antfu/install-pkg": "^1.1.0",
-    "@nut-up/cli-dev": "workspace:*",
-    "@nut-up/core": "workspace:*",
-    "@nut-up/settings": "workspace:*",
+    "@nutry/cli-dev": "workspace:*",
+    "@nutry/core": "workspace:*",
+    "@nutry/settings": "workspace:*",
     "clipanion": "4.0.0-rc.4",
     "enquirer": "^2.4.1",
     "pkg-dir": "^9.0.0",
@@ -367,8 +367,8 @@ DynamicImportCommand 的职责：
 - **enquirer**：交互式命令行工具，用于自动安装确认
 - **@antfu/install-pkg**：自动安装包工具
 - **pkg-dir**：查找项目根目录
-- **@nut-up/core**：核心工具库（日志、包配置读取等）
-- **@nut-up/settings**：项目配置管理
+- **@nutry/core**：核心工具库（日志、包配置读取等）
+- **@nutry/settings**：项目配置管理
 
 ## 命令列表
 

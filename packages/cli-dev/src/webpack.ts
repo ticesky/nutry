@@ -1,14 +1,14 @@
 import webpack from 'webpack';
 import WebpackDevServer from 'webpack-dev-server';
 import open from 'better-opn';
-import {DevCommandLineArgs, WebpackProjectSettings} from '@nut-up/settings';
-import {createWebpackConfig, EntryConfig} from '@nut-up/config-webpack';
-import {dirFromImportMeta, logger} from '@nut-up/core';
+import {DevCommandLineArgs, WebpackProjectSettings} from '@nutry/settings';
+import {createWebpackConfig, EntryConfig} from '@nutry/config-webpack';
+import {dirFromImportMeta, logger} from '@nutry/core';
 import {
     createWebpackDevServerPartial,
     createWebpackDevServerConfig,
     injectDevElements,
-} from '@nut-up/config-webpack-dev-server';
+} from '@nutry/config-webpack-dev-server';
 import {ServerStartContext} from './utils.js';
 
 type WebpackServerStartContext = ServerStartContext<EntryConfig, WebpackProjectSettings>;

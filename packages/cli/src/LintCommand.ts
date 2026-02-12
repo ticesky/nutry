@@ -1,5 +1,5 @@
 import {Option} from 'clipanion';
-import {LintCommandLineArgs} from '@nut-up/settings';
+import {LintCommandLineArgs} from '@nutry/settings';
 import DynamicImportCommand from './DynamicImportCommand.js';
 
 export default class LintCommand extends DynamicImportCommand<LintCommandLineArgs> {
@@ -9,7 +9,7 @@ export default class LintCommand extends DynamicImportCommand<LintCommandLineArg
         description: 'Lint files, by default .[j|t]s(x) files under src are linted',
     };
 
-    packageName = '@nut-up/cli-lint';
+    packageName = '@nutry/cli-lint';
 
     changed = Option.Boolean('--changed', false, {description: 'lint only changed files in git workspace'});
 

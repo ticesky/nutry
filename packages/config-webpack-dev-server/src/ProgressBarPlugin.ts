@@ -8,7 +8,7 @@ const PROGRESS_BAR_OPTIONS: Options = {
         const bar = options.formatBar?.(params.progress, options);
         const percentage = Math.round((params.progress * 100));
         const detail = percentage >= 99 ? '' : kolorist.white(`- ${payload?.message}`);
-        return `${kolorist.lightGreen('● @nut-up/dev')} ${bar} building (${percentage}%) ${detail}`;
+        return `${kolorist.lightGreen('● @nutry/dev')} ${bar} building (${percentage}%) ${detail}`;
     },
     formatBar: (progress: number) => {
         const total = 40;

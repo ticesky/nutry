@@ -1,7 +1,7 @@
 import path from 'node:path';
 import {existsSync} from 'node:fs';
 import fs from 'node:fs/promises';
-import {logger, importUserModule} from '@nut-up/core';
+import {logger, importUserModule} from '@nutry/core';
 import {AppEntry, ResolveOptions, TransformConfig} from './interface.js';
 
 const ALLOWED_ENTRY_EXTENSIONS = ['.tsx', '.ts', '.jsx', '.js'];

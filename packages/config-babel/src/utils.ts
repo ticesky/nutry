@@ -1,5 +1,5 @@
 import {PluginTarget} from '@babel/core';
-import {ThirdPartyUse} from '@nut-up/settings';
+import {ThirdPartyUse} from '@nutry/settings';
 import {BabelConfigOptions, BabelConfigOptionsFilled} from './interface.js';
 
 const DEFAULT_OPTIONS: BabelConfigOptionsFilled = {

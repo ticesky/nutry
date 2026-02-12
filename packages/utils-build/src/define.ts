@@ -1,4 +1,4 @@
-import {WorkMode} from '@nut-up/core';
+import {WorkMode} from '@nutry/core';
 
 const toDefines = (context: Record<string, any>, prefix: string): Record<string, string> => {
     const entries = Object.entries(context);

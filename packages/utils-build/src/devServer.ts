@@ -1,4 +1,4 @@
-import {Middleware, MiddlewareHook} from '@nut-up/settings';
+import {Middleware, MiddlewareHook} from '@nutry/settings';
 
 interface MiddlewareInternal {
     path: string;

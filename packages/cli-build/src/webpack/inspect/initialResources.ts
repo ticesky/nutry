@@ -1,7 +1,7 @@
 import {StatsCompilation} from 'webpack';
 import {uniqBy, sum, mean} from 'ramda';
 import prettyBytes from 'pretty-bytes';
-import {BuildInspectInitialResource} from '@nut-up/settings';
+import {BuildInspectInitialResource} from '@nutry/settings';
 import {RuleProcessor} from './utils.js';
 
 const extractInitialChunks = (compilations: StatsCompilation[]) => {

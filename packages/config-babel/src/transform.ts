@@ -1,6 +1,6 @@
 import {PluginItem, TransformOptions} from '@babel/core';
 import pluginReactConstantElement from '@babel/plugin-transform-react-constant-elements';
-import {compact} from '@nut-up/core';
+import {compact} from '@nutry/core';
 import addReactDisplayName from './plugins/add-react-display-name.js';
 import {compatPluginTarget} from './utils.js';
 import getTransformMinimalBabelConfig from './transformMinimal.js';

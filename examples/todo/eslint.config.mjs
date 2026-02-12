@@ -1,5 +1,5 @@
 import {defineConfig} from 'eslint/config';
-import {eslintConfig} from '@nut-up/config-lint';
+import {eslintConfig} from '@nutry/config-lint';
 
 export default defineConfig(
     {

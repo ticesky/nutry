@@ -18,7 +18,7 @@ export default {
       const relativeFiles = files.map(f => relative(pkgDir, f)).join(' ');
       // 关键：先 cd 到子包目录，然后再运行 eslint
       // 这样 ESLint 就能找到子包里的 eslint.config.mjs 了      
-      return `sh -c "cd ${pkgDir} && pnpm eslint --fix --max-warnings=0 ${relativeFiles}"`;
+      return `sh -c "cd ${pkgDir} && eslint --fix --max-warnings=0 ${relativeFiles}"`;
     });
   },
 };

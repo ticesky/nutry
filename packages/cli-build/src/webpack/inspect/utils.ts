@@ -1,7 +1,7 @@
 import * as kolorist from 'kolorist';
 import {isMatch} from 'matcher';
-import {logger, pReduce} from '@nut-up/core';
-import {RuleConfig, OptionalRuleConfig, Severity} from '@nut-up/settings';
+import {logger, pReduce} from '@nutry/core';
+import {RuleConfig, OptionalRuleConfig, Severity} from '@nutry/settings';
 
 const SEVERITY_PREFIX: Record<Severity, string> = {
     'off': '   ',

@@ -1,9 +1,9 @@
 import path from 'node:path';
 import {uniqBy, sortWith, ascend, isEmpty, difference} from 'ramda';
 import * as kolorist from 'kolorist';
-import {readPackageConfig, logger} from '@nut-up/core';
-import {BuildCommandLineArgs, BuildEnv, ProjectSettings} from '@nut-up/settings';
-import {AppEntry, BuildContext, createRuntimeBuildEnv} from '@nut-up/utils-build';
+import {readPackageConfig, logger} from '@nutry/core';
+import {BuildCommandLineArgs, BuildEnv, ProjectSettings} from '@nutry/settings';
+import {AppEntry, BuildContext, createRuntimeBuildEnv} from '@nutry/utils-build';
 import ConsoleTable, {Column} from 'tty-table';
 
 const printableValue = (value: unknown): string => {

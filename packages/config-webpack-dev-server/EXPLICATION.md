@@ -1,15 +1,15 @@
-# @nut-up/config-webpack-dev-server
+# @nutry/config-webpack-dev-server
 
 Webpack Dev Server 配置包，提供开发服务器的配置生成和相关插件。
 
 ## 概述
 
-`@nut-up/config-webpack-dev-server` 是 nut-up 构建工具的开发服务器配置包，负责生成 `webpack-dev-server` 的配置，并提供热更新、进度条显示、代理配置、Portal 扩展等开发体验增强功能。
+`@nutry/config-webpack-dev-server` 是 nutry 构建工具的开发服务器配置包，负责生成 `webpack-dev-server` 的配置，并提供热更新、进度条显示、代理配置、Portal 扩展等开发体验增强功能。
 
 ## 整体架构
 
 ```
-@nut-up/config-webpack-dev-server
+@nutry/config-webpack-dev-server
 ├─ index.ts                        # 入口，导出核心 API
 │   ├─ createWebpackDevServerPartial()   # Webpack 配置片段（插件）
 │   ├─ createWebpackDevServerConfig()    # DevServer 配置
@@ -231,7 +231,7 @@ export default class ProgressBarPlugin extends webpack.ProgressPlugin {
 **进度条样式：**
 
 ```
-● @nut-up/dev ████████████████████████████████████████ building (75%) - module transformation
+● @nutry/dev ████████████████████████████████████████ building (75%) - module transformation
 ```
 
 - 使用 `cli-progress` 库
@@ -317,7 +317,7 @@ setupMiddlewares: (middlewares, server) => {
 用户执行 `nut dev --entry=index --host=localhost`：
 
 ```
-1. @nut-up/cli-dev 调用 start()
+1. @nutry/cli-dev 调用 start()
    ↓
 2. createWebpackDevServerPartial(context, host)
    ├─ 创建 HTML 插件
@@ -392,10 +392,10 @@ export type { PortalApplication };
 ```json
 {
   "dependencies": {
-    "@nut-up/config-webpack": "workspace:*",
-    "@nut-up/core": "workspace:*",
-    "@nut-up/settings": "workspace:*",
-    "@nut-up/utils-build": "workspace:*",
+    "@nutry/config-webpack": "workspace:*",
+    "@nutry/core": "workspace:*",
+    "@nutry/settings": "workspace:*",
+    "@nutry/utils-build": "workspace:*",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.6.2",
     "@soda/friendly-errors-webpack-plugin": "^1.8.1",
     "cli-progress": "^3.12.0",
@@ -422,19 +422,19 @@ export type { PortalApplication };
 ## 与其他包的关系
 
 ```
-@nut-up/cli-dev
+@nutry/cli-dev
     │
     │  import { createWebpackDevServerPartial, createWebpackDevServerConfig, injectDevElements }
     ↓
-@nut-up/config-webpack-dev-server
+@nutry/config-webpack-dev-server
     │
     │  import { createHtmlPluginInstances, BuildContext }
     ↓
-@nut-up/config-webpack
+@nutry/config-webpack
     │
     │  import { constructProxyConfiguration, createMiddlewareHook }
     ↓
-@nut-up/utils-build
+@nutry/utils-build
 ```
 
 ## 设计优势

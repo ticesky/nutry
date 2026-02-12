@@ -1,5 +1,5 @@
-import {GitStatusResult} from '@nut-up/core';
-import {LintCommandLineArgs} from '@nut-up/settings';
+import {GitStatusResult} from '@nutry/core';
+import {LintCommandLineArgs} from '@nutry/settings';
 
 export interface ResolveOptions extends LintCommandLineArgs {
     gitStatus: GitStatusResult;

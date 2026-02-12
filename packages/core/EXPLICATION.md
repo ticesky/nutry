@@ -1,15 +1,15 @@
-# @nut-up/core
+# @nutry/core
 
 核心工具库，提供项目操作、日志、模块解析、环境变量等基础功能。
 
 ## 概述
 
-`@nut-up/core` 是 nut-up 构建工具的基础设施层，为其他所有包提供通用的工具函数。它包含项目结构探测、日志系统、模块解析、环境变量加载、Git 操作等核心能力，是整个工具链的底层支撑。
+`@nutry/core` 是 nutry 构建工具的基础设施层，为其他所有包提供通用的工具函数。它包含项目结构探测、日志系统、模块解析、环境变量加载、Git 操作等核心能力，是整个工具链的底层支撑。
 
 ## 整体架构
 
 ```
-@nut-up/core
+@nutry/core
 ├─ index.ts          # 入口，统一导出所有功能
 │
 ├─ project.ts        # 项目相关
@@ -153,7 +153,7 @@ export default {
 
 **使用示例：**
 ```typescript
-import {logger} from '@nut-up/core';
+import {logger} from '@nutry/core';
 
 logger.log('Normal message');
 logger.warn('Warning message');      // 黄色
@@ -311,7 +311,7 @@ export { CommandDefinition, PackageInfo, ProjectAware, WorkMode, WorkModeAware }
 
 ## 设计优势
 
-1. **无依赖循环**：作为底层包，不依赖其他 @nut-up 包
+1. **无依赖循环**：作为底层包，不依赖其他 @nutry 包
 2. **通用性强**：提供的工具函数可被任何包使用
 3. **Monorepo 支持**：环境变量、项目探测等都支持 monorepo 场景
 4. **类型完备**：完整的 TypeScript 类型定义

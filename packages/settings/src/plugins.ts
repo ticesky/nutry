@@ -1,4 +1,4 @@
-import {pReduce} from '@nut-up/core';
+import {pReduce} from '@nutry/core';
 import {
     ProjectSettings,
     ClientProjectSettings,

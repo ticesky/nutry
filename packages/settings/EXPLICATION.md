@@ -1,15 +1,15 @@
-# @nut-up/settings
+# @nutry/settings
 
 项目配置管理包，负责读取、校验、合并和监听用户配置文件。
 
 ## 概述
 
-`@nut-up/settings` 是 nut-up 构建工具的配置管理层，负责处理 `nut.config.ts` 配置文件。它提供配置读取、Schema 校验、默认值填充、插件应用、文件监听等完整的配置生命周期管理。
+`@nutry/settings` 是 nutry 构建工具的配置管理层，负责处理 `nut.config.ts` 配置文件。它提供配置读取、Schema 校验、默认值填充、插件应用、文件监听等完整的配置生命周期管理。
 
 ## 整体架构
 
 ```
-@nut-up/settings
+@nutry/settings
 ├─ index.ts              # 入口，核心 API
 │   ├─ readProjectSettings()      # 读取项目配置
 │   ├─ watchProjectSettings()     # 监听配置变化
@@ -190,7 +190,7 @@ const fillWebpackDevServerSettings = (settings?): WebpackDevServerSettings => {
 ### nut.config.ts
 
 ```typescript
-import {configure} from '@nut-up/settings';
+import {configure} from '@nutry/settings';
 
 export default configure('webpack', {
     build: {
@@ -338,7 +338,7 @@ export * from './interface/index.js';
 ### 子路径导出
 
 ```typescript
-// @nut-up/settings/client
+// @nutry/settings/client
 // 提供客户端类型定义，用于业务代码中访问 skr.features 等
 ```
 
@@ -347,7 +347,7 @@ export * from './interface/index.js';
 ```json
 {
   "dependencies": {
-    "@nut-up/core": "workspace:*",
+    "@nutry/core": "workspace:*",
     "chokidar": "^5.0.0",
     "hasha": "^7.0.0",
     "schema-utils": "^4.3.3"
@@ -359,7 +359,7 @@ export * from './interface/index.js';
 
 | 依赖 | 用途 |
 |------|------|
-| `@nut-up/core` | 日志、模块导入等基础功能 |
+| `@nutry/core` | 日志、模块导入等基础功能 |
 | `chokidar` | 文件监听 |
 | `hasha` | 文件 hash 计算（用于变更检测） |
 | `schema-utils` | 配置 Schema 校验 |

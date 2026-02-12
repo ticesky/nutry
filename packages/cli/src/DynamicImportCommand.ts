@@ -5,7 +5,7 @@ import {packageDirectory} from 'package-directory';
 import enquirer from 'enquirer';
 import {installPackage} from '@antfu/install-pkg';
 import {Command} from 'clipanion';
-import {CommandDefinition, findGitRoot, logger, readPackageConfig, resolveFrom} from '@nut-up/core';
+import {CommandDefinition, findGitRoot, logger, readPackageConfig, resolveFrom} from '@nutry/core';
 
 const isErrorWithCode = (error: any): error is NodeJS.ErrnoException => {
     return 'message' in error && 'code' in error;
@@ -68,7 +68,7 @@ export default abstract class DynamicImportCommand<A> extends Command {
                     You don't have ${this.packageName} installed or it is broken.
                     Unfotunately we're unable to install it automatically for you.
                     To auto install command packages, you're required to satisfy these conditions:
-                        1. Install @nut-up/cli to a exact version.
+                        1. Install @nutry/cli to a exact version.
                         2. Have git enabled in this project.
                         3. Keep a lock file (either npm, yarn or pnpm) in your git root directory.
                     You may install ${this.packageName} your self and try to run command again.
@@ -109,7 +109,7 @@ export default abstract class DynamicImportCommand<A> extends Command {
         const packageConfig = await readPackageConfig(packageRoot);
         const dependencies = {...packageConfig.dependencies, ...packageConfig.devDependencies};
 
-        return dependencies['@nut-up/cli'] === this.cli.binaryVersion;
+        return dependencies['@nutry/cli'] === this.cli.binaryVersion;
     }
 
     private async detectPackageManager(): Promise<PackageManager | null> {

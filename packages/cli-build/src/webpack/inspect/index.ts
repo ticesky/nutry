@@ -1,5 +1,5 @@
 import {Stats} from 'webpack';
-import {BuildInspectSettings} from '@nut-up/settings';
+import {BuildInspectSettings} from '@nutry/settings';
 import {run, InspectOptions} from './utils.js';
 import initialResources from './initialResources.js';
 import duplicatePackages from './duplicatePackages.js';

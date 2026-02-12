@@ -1,6 +1,6 @@
 import {Configuration} from 'webpack';
 import {BundleAnalyzerPlugin} from 'webpack-bundle-analyzer';
-import {BuildContext} from '@nut-up/config-webpack';
+import {BuildContext} from '@nutry/config-webpack';
 
 export const analyze = (context: BuildContext): Configuration => (
     context.isDefaultTarget

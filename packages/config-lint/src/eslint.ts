@@ -9,12 +9,12 @@ import jsxA11y from 'eslint-plugin-jsx-a11y';
 export const baseConfig: Config[] = [
     // --- 1. 全局忽略 ---
     {
-        name: "nut-up/ignores",
+        name: "nutry/ignores",
         ignores: ['dist/**', 'node_modules/**', '**/eslint.config.*', 'build/**', '*.d.ts'],
     },
     // --- 2. JS 基础规则（JS / JSX） ---
     {
-        name: 'nut-up/js',
+        name: 'nutry/js',
         files: ['**/*.{js,jsx}'],
         rules: {
             ...js.configs.recommended.rules,
@@ -26,7 +26,7 @@ export const baseConfig: Config[] = [
         files: ['**/*.{ts,tsx}'],
     })),
     {
-        name: "nut-up/ts",
+        name: "nutry/ts",
         files: ['**/*.{ts,tsx}'],
         languageOptions: {
             parser: tseslint.parser,
@@ -64,7 +64,7 @@ export const reactConfig: Config[] =  [
     // --- 4. React 深度优化 ---
     hooksPlugin.configs.flat.recommended,
     {
-        name: "nut-up/react",
+        name: "nutry/react",
         files: ['**/*.{jsx,tsx}'],
         plugins: {
             'react': reactPlugin,

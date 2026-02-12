@@ -1,6 +1,6 @@
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
-import {configure} from '@nut-up/settings';
+import {configure} from '@nutry/settings';
 
 export default configure(
     'webpack',

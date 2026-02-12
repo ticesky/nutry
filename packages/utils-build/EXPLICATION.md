@@ -1,15 +1,15 @@
-# @nut-up/utils-build
+# @nutry/utils-build
 
 构建工具集，提供入口收集、代理配置、环境变量定义、样式配置等构建相关的工具函数。
 
 ## 概述
 
-`@nut-up/utils-build` 是 nut-up 构建工具的工具集合层，为 `@nut-up/config-webpack` 和 `@nut-up/cli-dev` 等包提供构建相关的通用功能。它包含入口文件收集、代理配置构建、环境变量定义、Less/PostCSS 配置、HTML 处理等核心能力。
+`@nutry/utils-build` 是 nutry 构建工具的工具集合层，为 `@nutry/config-webpack` 和 `@nutry/cli-dev` 等包提供构建相关的通用功能。它包含入口文件收集、代理配置构建、环境变量定义、Less/PostCSS 配置、HTML 处理等核心能力。
 
 ## 整体架构
 
 ```
-@nut-up/utils-build
+@nutry/utils-build
 ├─ index.ts              # 入口，统一导出所有功能
 │
 ├─ entry/                # 入口处理
@@ -368,8 +368,8 @@ export { injectIntoHtml, serviceWorkerRegistryScript };
 ```json
 {
   "dependencies": {
-    "@nut-up/core": "workspace:*",
-    "@nut-up/settings": "workspace:*",
+    "@nutry/core": "workspace:*",
+    "@nutry/settings": "workspace:*",
     "change-case": "^5.4.4",
     "cssnano": "^7.1.2",
     "escape-string-regexp": "^5.0.0",
@@ -396,15 +396,15 @@ export { injectIntoHtml, serviceWorkerRegistryScript };
 ## 与其他包的关系
 
 ```
-@nut-up/config-webpack
+@nutry/config-webpack
     │
     │  import { collectAppEntries, constructDefines, lessConfig, postcssConfig }
     ↓
-@nut-up/utils-build
+@nutry/utils-build
     │
     │  import { logger, pMap, compact }
     ↓
-@nut-up/core
+@nutry/core
 ```
 
 ## 设计优势

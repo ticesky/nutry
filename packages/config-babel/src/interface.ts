@@ -1,5 +1,5 @@
-import {WorkMode} from '@nut-up/core';
-import {ThirdPartyUse} from '@nut-up/settings';
+import {WorkMode} from '@nutry/core';
+import {ThirdPartyUse} from '@nutry/settings';
 
 export interface BabelConfigOptions {
     readonly uses?: ThirdPartyUse[];

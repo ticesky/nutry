@@ -1,5 +1,5 @@
 import {internalIpV4} from 'internal-ip';
-import {HostType} from '@nut-up/settings';
+import {HostType} from '@nutry/settings';
 
 export const resolveDevHost = async (hostType: HostType | undefined) => {
     if (!hostType) {

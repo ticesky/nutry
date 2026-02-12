@@ -1,6 +1,6 @@
 import {RuleSetRule} from 'webpack';
-import {isProjectSourceIn, normalizeRuleMatch} from '@nut-up/core';
-import {WebpackBuildEntry} from '@nut-up/settings';
+import {isProjectSourceIn, normalizeRuleMatch} from '@nutry/core';
+import {WebpackBuildEntry} from '@nutry/settings';
 import * as loaders from '../loaders/index.js';
 import {introduceLoaders} from '../utils/loader.js';
 

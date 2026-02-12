@@ -1,5 +1,5 @@
-import {resolve} from '@nut-up/core';
-import {postcssConfig} from '@nut-up/utils-build';
+import {resolve} from '@nutry/core';
+import {postcssConfig} from '@nutry/utils-build';
 import postcss from 'postcss';
 import {LoaderFactory} from '../interface.js';
 

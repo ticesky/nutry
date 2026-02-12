@@ -2,7 +2,7 @@ import path from 'node:path';
 import fs from 'node:fs/promises';
 import {uniq} from 'ramda';
 import {globby} from 'globby';
-import {findGitRoot} from '@nut-up/core';
+import {findGitRoot} from '@nutry/core';
 import {ResolveOptions} from './interface.js';
 
 type LintType = 'script' | 'style';

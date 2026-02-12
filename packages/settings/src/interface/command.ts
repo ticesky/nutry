@@ -1,4 +1,4 @@
-import {WorkMode, WorkModeAware, ProjectAware} from '@nut-up/core';
+import {WorkMode, WorkModeAware, ProjectAware} from '@nutry/core';
 import {ThirdPartyUse} from './build.js';
 
 export type HostType = 'localhost' | 'loopback' | 'ip' | {} & string;

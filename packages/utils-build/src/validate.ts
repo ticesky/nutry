@@ -1,8 +1,8 @@
 import path from 'node:path';
 import {existsSync} from 'node:fs';
 import {equals} from 'ramda';
-import {logger, findGitRoot, readPackageConfig} from '@nut-up/core';
-import {FeatureMatrix, ProjectSettings} from '@nut-up/settings';
+import {logger, findGitRoot, readPackageConfig} from '@nutry/core';
+import {FeatureMatrix, ProjectSettings} from '@nutry/settings';
 
 const toStringTag = Object.prototype.toString.bind(Object.prototype);
 

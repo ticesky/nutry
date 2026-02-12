@@ -1,8 +1,8 @@
 import {reject, isNil} from 'ramda';
 import webpack, {Configuration, Stats} from 'webpack';
-import {logger, pMap} from '@nut-up/core';
-import {createWebpackConfig, BuildContext, EntryConfig} from '@nut-up/config-webpack';
-import {BuildCommandLineArgs, WebpackProjectSettings} from '@nut-up/settings';
+import {logger, pMap} from '@nutry/core';
+import {createWebpackConfig, BuildContext, EntryConfig} from '@nutry/config-webpack';
+import {BuildCommandLineArgs, WebpackProjectSettings} from '@nutry/settings';
 import {BuildRunOptions, WatchRunOptions} from '../interface.js';
 import * as partials from './partial.js';
 import {drawBuildReport, printWebpackResult, WebpackResult} from './report.js';

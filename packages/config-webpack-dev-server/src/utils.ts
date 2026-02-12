@@ -1,5 +1,5 @@
 import {EntryObject} from 'webpack';
-import {resolveFrom} from '@nut-up/core';
+import {resolveFrom} from '@nutry/core';
 
 type EntryType = EntryObject[string];
 

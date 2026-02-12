@@ -1,6 +1,6 @@
-import {resolve, resolveCoreJsVersion} from '@nut-up/core';
-import {getBabelConfig, BabelConfigOptions} from '@nut-up/config-babel';
-import {BuildEntry, warnAndExitOnInvalidFinalizeReturn} from '@nut-up/settings';
+import {resolve, resolveCoreJsVersion} from '@nutry/core';
+import {getBabelConfig, BabelConfigOptions} from '@nutry/config-babel';
+import {BuildEntry, warnAndExitOnInvalidFinalizeReturn} from '@nutry/settings';
 import {LoaderFactory} from '../interface.js';
 
 const factory: LoaderFactory = async (entry: BuildEntry) => {

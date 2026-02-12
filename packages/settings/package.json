@@ -1,5 +1,5 @@
 {
-    "name": "@nut-up/settings",
+    "name": "@nutry/settings",
     "version": "0.0.1",
     "license": "ISC",
     "type": "module",
@@ -15,6 +15,9 @@
     "files": [
         "dist"
     ],
+    "publishConfig": {
+        "access": "public"
+    },
     "scripts": {
         "build": "tsc -b",
         "clean": "tsc -b --clean && pnpm run clean:extra",
@@ -25,8 +28,8 @@
         "@types/express": "^4.17.25"
     },
     "dependencies": {
-        "@nut-up/config-lint": "workspace:*",
-        "@nut-up/core": "workspace:*",
+        "@nutry/config-lint": "workspace:*",
+        "@nutry/core": "workspace:*",
         "chokidar": "^5.0.0",
         "hasha": "^7.0.0",
         "schema-utils": "^4.3.3"

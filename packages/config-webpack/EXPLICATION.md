@@ -1,15 +1,15 @@
-# @nut-up/config-webpack
+# @nutry/config-webpack
 
 Webpack 配置核心包，提供完整的 Webpack 配置生成能力。
 
 ## 概述
 
-`@nut-up/config-webpack` 是 nut-up 构建工具的核心配置包，负责生成完整的 Webpack 配置。它采用**模块化配置片段（Partials）** 设计，通过组合不同的配置片段来构建最终配置，支持开发和生产两种模式，并提供丰富的 Loader 和 Rule 预设。
+`@nutry/config-webpack` 是 nutry 构建工具的核心配置包，负责生成完整的 Webpack 配置。它采用**模块化配置片段（Partials）** 设计，通过组合不同的配置片段来构建最终配置，支持开发和生产两种模式，并提供丰富的 Loader 和 Rule 预设。
 
 ## 整体架构
 
 ```
-@nut-up/config-webpack
+@nutry/config-webpack
 ├─ index.ts                    # 入口，导出核心 API
 │   ├─ createWebpackConfig()   # 创建 Webpack 配置
 │   └─ collectEntries()        # 收集入口文件
@@ -387,10 +387,10 @@ export { createHtmlPluginInstances };     // 创建 HTML 插件
 export { createTransformHtmlPluginInstance };
 
 // 子路径导出
-// @nut-up/config-webpack/loaders
+// @nutry/config-webpack/loaders
 export * from './loaders/index.js';
 
-// @nut-up/config-webpack/rules
+// @nutry/config-webpack/rules
 export * from './rules/index.js';
 ```
 
@@ -434,10 +434,10 @@ interface StrictOptions {
 ```json
 {
   "dependencies": {
-    "@nut-up/config-babel": "workspace:*",
-    "@nut-up/core": "workspace:*",
-    "@nut-up/settings": "workspace:*",
-    "@nut-up/utils-build": "workspace:*",
+    "@nutry/config-babel": "workspace:*",
+    "@nutry/core": "workspace:*",
+    "@nutry/settings": "workspace:*",
+    "@nutry/utils-build": "workspace:*",
     "babel-loader": "^10.0.0",
     "css-loader": "^7.1.2",
     "less-loader": "^12.3.0",
@@ -462,7 +462,7 @@ interface StrictOptions {
 
 | 依赖 | 用途 |
 |------|------|
-| `@nut-up/config-babel` | Babel 配置 |
+| `@nutry/config-babel` | Babel 配置 |
 | `babel-loader` | JS/TS 转译 |
 | `css-loader` / `less-loader` / `postcss-loader` | 样式处理 |
 | `mini-css-extract-plugin` | CSS 提取 |
@@ -485,7 +485,7 @@ interface StrictOptions {
 ### 基本使用
 
 ```typescript
-import { createWebpackConfig, collectEntries } from '@nut-up/config-webpack';
+import { createWebpackConfig, collectEntries } from '@nutry/config-webpack';
 
 const entries = await collectEntries({
     cwd: process.cwd(),
@@ -505,7 +505,7 @@ const config = await createWebpackConfig(buildContext, {
 ### 使用内置 Rules
 
 ```typescript
-import * as rules from '@nut-up/config-webpack/rules';
+import * as rules from '@nutry/config-webpack/rules';
 
 const scriptRule = await rules.script(entry);
 const lessRule = await rules.less(entry);
@@ -514,7 +514,7 @@ const lessRule = await rules.less(entry);
 ### 使用内置 Loaders
 
 ```typescript
-import { introduceLoaders } from '@nut-up/config-webpack';
+import { introduceLoaders } from '@nutry/config-webpack';
 
 const loaders = await introduceLoaders(['babel', 'css', 'postcss'], entry);
 ```

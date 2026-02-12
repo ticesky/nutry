@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "@nut-up/demo-todo",
+  "name": "@nutry/demo-todo",
   "version": "1.0.0",
   "description": "待办列表示例",
   "scripts": {
@@ -25,12 +25,12 @@
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
-    "@nut-up/cli": "workspace:*",
-    "@nut-up/cli-build": "workspace:*",
-    "@nut-up/cli-dev": "workspace:*",
-    "@nut-up/cli-lint": "workspace:*",
-    "@nut-up/config-lint": "workspace:*",
-    "@nut-up/settings": "workspace:*",
+    "@nutry/cli": "workspace:*",
+    "@nutry/cli-build": "workspace:*",
+    "@nutry/cli-dev": "workspace:*",
+    "@nutry/cli-lint": "workspace:*",
+    "@nutry/config-lint": "workspace:*",
+    "@nutry/settings": "workspace:*",
     "antd": "^5.9.4",
     "core-js": "^3.33.0",
     "localforage": "^1.10.0",

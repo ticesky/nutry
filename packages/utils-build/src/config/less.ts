@@ -1,6 +1,6 @@
 import fs from 'node:fs/promises';
 import {globby} from 'globby';
-import {pMap} from '@nut-up/core';
+import {pMap} from '@nutry/core';
 import less from 'less';
 
 type Less = typeof less;

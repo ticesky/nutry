@@ -1,6 +1,6 @@
 import {ESLint} from 'eslint';
-import {resolveCacheLocation, pFilter} from '@nut-up/core';
-import {getScriptLintBaseConfig} from '@nut-up/config-lint';
+import {resolveCacheLocation, pFilter} from '@nutry/core';
+import {getScriptLintBaseConfig} from '@nutry/config-lint';
 import {resolveLintFiles} from './utils.js';
 import {ResolveOptions} from './interface.js';
 

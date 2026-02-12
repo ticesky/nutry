@@ -1,4 +1,4 @@
-import {BuildEntry, ProjectSettings} from '@nut-up/settings';
+import {BuildEntry, ProjectSettings} from '@nutry/settings';
 
 export interface EntryLocation {
     cwd: string;
