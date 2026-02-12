@@ -1,6 +1,6 @@
 {
     "name": "@nutry/config-babel",
-    "version": "0.0.1",
+    "version": "1.0.0-alpha.0",
     "license": "ISC",
     "type": "module",
     "main": "./dist/index.js",

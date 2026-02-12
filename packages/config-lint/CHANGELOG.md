@@ -1,0 +1,7 @@
+# @nutry/config-lint
+
+## 1.0.0-alpha.0
+
+### Major Changes
+
+- first release nutry

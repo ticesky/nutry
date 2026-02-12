@@ -1,0 +1,21 @@
+{
+  "mode": "pre",
+  "tag": "alpha",
+  "initialVersions": {
+    "@nutry/demo-todo": "1.0.0",
+    "@nutry/cli": "0.0.1",
+    "@nutry/cli-build": "0.0.1",
+    "@nutry/cli-dev": "0.0.1",
+    "@nutry/cli-lint": "0.0.1",
+    "@nutry/config-babel": "0.0.1",
+    "@nutry/config-lint": "0.0.1",
+    "@nutry/config-webpack": "0.0.1",
+    "@nutry/config-webpack-dev-server": "0.0.1",
+    "@nutry/core": "0.0.1",
+    "@nutry/settings": "0.0.1",
+    "@nutry/utils-build": "0.0.1"
+  },
+  "changesets": [
+    "free-ghosts-lay"
+  ]
+}

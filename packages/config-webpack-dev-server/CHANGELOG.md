@@ -1,0 +1,16 @@
+# @nutry/config-webpack-dev-server
+
+## 1.0.0-alpha.0
+
+### Major Changes
+
+- first release nutry
+
+### Patch Changes
+
+- Updated dependencies
+  - @nutry/config-lint@1.0.0-alpha.0
+  - @nutry/config-webpack@1.0.0-alpha.0
+  - @nutry/core@1.0.0-alpha.0
+  - @nutry/settings@1.0.0-alpha.0
+  - @nutry/utils-build@1.0.0-alpha.0
