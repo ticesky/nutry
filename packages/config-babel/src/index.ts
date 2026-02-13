@@ -1,4 +1,4 @@
-import {PluginItem, TransformOptions} from '@babel/core';
+import type {PluginItem, TransformOptions} from '@babel/core';
 // import debugReactComponentFileName from '@reskript/babel-plugin-debug-react-component-file-name';
 import pluginReactRefresh from 'react-refresh/babel';
 import {compact} from '@nutry/core';

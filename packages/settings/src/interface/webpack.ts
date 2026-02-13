@@ -1,4 +1,4 @@
-import {Configuration, RuleSetRule, RuleSetUseItem} from 'webpack';
+import type {Configuration, RuleSetRule, RuleSetUseItem} from 'webpack';
 import {WebpackBuildEntry} from './shared.js';
 
 type NotOptinal<T> = Exclude<T, undefined>;

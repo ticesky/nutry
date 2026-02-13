@@ -1,3 +1,5 @@
+declare module '*.css';
+
 declare module '*.less' {
     const content: {
         [className: string]: string;

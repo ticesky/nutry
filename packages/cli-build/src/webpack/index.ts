@@ -1,5 +1,5 @@
 import {reject, isNil} from 'ramda';
-import webpack, {Configuration, Stats} from 'webpack';
+import webpack, {type Configuration, type Stats} from 'webpack';
 import {logger, pMap} from '@nutry/core';
 import {createWebpackConfig, BuildContext, EntryConfig} from '@nutry/config-webpack';
 import {BuildCommandLineArgs, WebpackProjectSettings} from '@nutry/settings';

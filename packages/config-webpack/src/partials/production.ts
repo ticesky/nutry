@@ -1,5 +1,5 @@
 import path from 'node:path';
-import {Configuration} from 'webpack';
+import {type Configuration} from 'webpack';
 import {findUp} from 'find-up';
 import {filter} from 'ramda';
 import {ConfigurationFactory} from '../interface.js';

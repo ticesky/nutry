@@ -1,4 +1,4 @@
-import {TransformOptions} from '@babel/core';
+import type {TransformOptions} from '@babel/core';
 import {BuildEntry} from './shared.js';
 import {WebpackFinalize} from './webpack.js';
 

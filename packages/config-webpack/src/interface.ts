@@ -1,6 +1,6 @@
 import {WebpackBuildEntry, WebpackProjectSettings} from '@nutry/settings';
 import {BuildContext as BuildContextGeneric} from '@nutry/utils-build';
-import {Configuration, RuleSetUseItem, EntryObject} from 'webpack';
+import type {Configuration, RuleSetUseItem, EntryObject} from 'webpack';
 
 type EntryDescriptor = Exclude<EntryObject[string], string | string[]>;
 

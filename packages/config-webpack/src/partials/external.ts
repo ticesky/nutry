@@ -1,5 +1,5 @@
 import path from 'node:path';
-import {Configuration} from 'webpack';
+import {type Configuration} from 'webpack';
 import {ConfigurationFactory} from '../interface.js';
 
 const factory: ConfigurationFactory = entry => {

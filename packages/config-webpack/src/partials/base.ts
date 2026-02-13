@@ -5,7 +5,7 @@ import fs from 'node:fs/promises';
 import {map} from 'ramda';
 import {compact, dirFromImportMeta, resolve, findGitRoot, pMap} from '@nutry/core';
 import {kebabCase} from 'change-case';
-import webpack, {EntryObject} from 'webpack';
+import webpack, {type EntryObject} from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import ESLintPlugin from 'eslint-webpack-plugin';
 import StyleLintPlugin from 'stylelint-webpack-plugin';

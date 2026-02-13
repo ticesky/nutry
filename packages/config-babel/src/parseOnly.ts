@@ -1,4 +1,4 @@
-import {PluginItem, TransformOptions} from '@babel/core';
+import type {PluginItem, TransformOptions} from '@babel/core';
 import presetEnv from '@babel/preset-env';
 import presetTypeScript from '@babel/preset-typescript';
 import presetReact from '@babel/preset-react';

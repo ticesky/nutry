@@ -1,5 +1,5 @@
 import eslintTableFormatter from 'eslint-formatter-table';
-import {Linter, ESLint} from 'eslint';
+import type {Linter, ESLint} from 'eslint';
 import {execa} from 'execa';
 import {logger, gitStatus, findGitRoot} from '@nutry/core';
 import {LintCommandLineArgs} from '@nutry/settings';

@@ -32,7 +32,15 @@
         "kolorist": "^1.8.0",
         "matcher": "^6.0.0",
         "pretty-bytes": "^7.1.0",
+        "ramda": "^0.32.0",
         "tty-table": "^5.0.0",
         "webpack-bundle-analyzer": "^5.2.0"
+    },
+    "devDependencies": {
+        "@types/ramda": "^0.31.1",
+        "webpack": "^5.105.0"
+    },
+    "peerDependencies": {
+        "webpack": "^5.105.0"
     }
 }

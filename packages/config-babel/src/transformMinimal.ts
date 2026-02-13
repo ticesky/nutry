@@ -1,4 +1,4 @@
-import {PluginItem, TransformOptions} from '@babel/core';
+import type {PluginItem, TransformOptions} from '@babel/core';
 import pluginStyledComponents from 'babel-plugin-styled-components';
 import pluginEmotion from '@emotion/babel-plugin';
 import pluginTypeScriptMetadata from 'babel-plugin-transform-typescript-metadata';

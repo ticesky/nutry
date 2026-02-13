@@ -1,6 +1,6 @@
 import path from 'node:path';
 import {pMap, logger, dirFromImportMeta} from '@nutry/core';
-import {Configuration} from 'webpack';
+import type {Configuration} from 'webpack';
 import {warnAndExitOnInvalidFinalizeReturn, BuildInternals, FinalizableWebpackConfiguration} from '@nutry/settings';
 import {
     EntryOptions,

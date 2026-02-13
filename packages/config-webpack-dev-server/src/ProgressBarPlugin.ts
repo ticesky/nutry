@@ -1,4 +1,4 @@
-import webpack, {Compiler} from 'webpack';
+import webpack, {type Compiler} from 'webpack';
 import {SingleBar, Options} from 'cli-progress';
 import * as kolorist from 'kolorist';
 

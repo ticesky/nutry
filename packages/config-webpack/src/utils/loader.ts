@@ -1,5 +1,5 @@
 import {compact} from '@nutry/core';
-import {RuleSetUseItem} from 'webpack';
+import {type RuleSetUseItem} from 'webpack';
 import {WebpackBuildEntry, LoaderType} from '@nutry/settings';
 import * as loaders from '../loaders/index.js';
 

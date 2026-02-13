@@ -1,7 +1,7 @@
 import path from 'node:path';
 import fs from 'node:fs/promises';
 import {uniq, last, reject, isNil} from 'ramda';
-import {StatsCompilation} from 'webpack';
+import type {StatsCompilation} from 'webpack';
 import {BuildInspectSettings, SourceFilter} from '@nutry/settings';
 import {RuleProcessor, isIncluded} from './utils.js';
 

@@ -1,4 +1,4 @@
-import {Stats} from 'webpack';
+import type {Stats} from 'webpack';
 import {logger} from '@nutry/core';
 import {drawAssetReport, Asset} from '../utils.js';
 import {WebpackCompileAsset} from './interface.js';

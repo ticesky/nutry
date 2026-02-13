@@ -25,8 +25,10 @@
     },
     "devDependencies": {
         "@types/less": "^3.0.8",
+        "@types/ramda": "^0.31.1",
         "@types/xml2js": "^0.4.14",
-        "postcss": "^8.5.6"
+        "postcss": "^8.5.6",
+        "webpack-dev-server": "^5.2.3"
     },
     "dependencies": {
         "@nutry/config-lint": "workspace:*",
@@ -40,6 +42,7 @@
         "less-plugin-npm-import": "^2.1.0",
         "postcss-preset-env": "^11.1.2",
         "proxy-agent": "^6.5.0",
+        "ramda": "^0.32.0",
         "xml2js": "^0.6.2"
     }
 }

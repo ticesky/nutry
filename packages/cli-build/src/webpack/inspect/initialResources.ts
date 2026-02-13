@@ -1,4 +1,4 @@
-import {StatsCompilation} from 'webpack';
+import type {StatsCompilation} from 'webpack';
 import {uniqBy, sum, mean} from 'ramda';
 import prettyBytes from 'pretty-bytes';
 import {BuildInspectInitialResource} from '@nutry/settings';

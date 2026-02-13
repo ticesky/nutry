@@ -1,4 +1,4 @@
-import {PluginItem, TransformOptions} from '@babel/core';
+import type {PluginItem, TransformOptions} from '@babel/core';
 import pluginReactConstantElement from '@babel/plugin-transform-react-constant-elements';
 import {compact} from '@nutry/core';
 import addReactDisplayName from './plugins/add-react-display-name.js';

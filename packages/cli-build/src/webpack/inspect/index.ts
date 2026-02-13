@@ -1,4 +1,4 @@
-import {Stats} from 'webpack';
+import type {Stats} from 'webpack';
 import {BuildInspectSettings} from '@nutry/settings';
 import {run, InspectOptions} from './utils.js';
 import initialResources from './initialResources.js';

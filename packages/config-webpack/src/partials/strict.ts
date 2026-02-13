@@ -1,6 +1,6 @@
 import path from 'node:path';
 import {existsSync} from 'node:fs';
-import {Configuration} from 'webpack';
+import {type Configuration} from 'webpack';
 import {compact} from '@nutry/core';
 import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';

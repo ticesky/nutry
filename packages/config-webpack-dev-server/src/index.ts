@@ -1,6 +1,6 @@
 import path from 'node:path';
-import {Configuration} from 'webpack';
-import {Configuration as DevServerConfiguration} from 'webpack-dev-server';
+import {type Configuration} from 'webpack';
+import {type Configuration as DevServerConfiguration} from 'webpack-dev-server';
 import FriendlyErrorsWebpackPlugin from '@soda/friendly-errors-webpack-plugin';
 import {merge} from 'webpack-merge';
 import launchInEditor from 'launch-editor-middleware';

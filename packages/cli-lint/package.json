@@ -29,9 +29,11 @@
         "eslint-formatter-pretty": "^7.0.0",
         "eslint-formatter-table": "^7.32.1",
         "execa": "^9.6.1",
-        "globby": "^16.1.0"
+        "globby": "^16.1.0",
+        "ramda": "^0.32.0"
     },
     "devDependencies": {
-        "@nutry/settings": "workspace:*"
+        "@nutry/settings": "workspace:*",
+        "@types/ramda": "^0.31.1"
     }
 }

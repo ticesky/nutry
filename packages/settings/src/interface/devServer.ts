@@ -1,6 +1,6 @@
 import {IncomingMessage, ServerResponse} from 'node:http';
 import {ServerOptions as HttpsServerOptions} from 'node:https';
-import {Configuration} from 'webpack-dev-server';
+import type {Configuration} from 'webpack-dev-server';
 import {WebpackBuildEntry} from './shared.js';
 
 export type Middleware = (req: IncomingMessage, res: ServerResponse, next: (err?: Error) => void) => void;

@@ -1,4 +1,4 @@
-import {Configuration} from 'webpack';
+import type {Configuration} from 'webpack';
 import {BundleAnalyzerPlugin} from 'webpack-bundle-analyzer';
 import {BuildContext} from '@nutry/config-webpack';
 

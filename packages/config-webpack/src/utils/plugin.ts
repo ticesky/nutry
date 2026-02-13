@@ -1,4 +1,4 @@
-import {Compilation, Compiler} from 'webpack';
+import type {Compilation, Compiler} from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 export class TransformHtmlWebpackPlugin {

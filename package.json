@@ -16,28 +16,21 @@
     "prepare": "husky"
   },
   "devDependencies": {
-    "@babel/core": "^7.28.6",
-    "@babel/plugin-transform-typescript": "^7.28.6",
     "@changesets/cli": "^2.29.8",
-    "@rollup/plugin-babel": "^6.1.0",
-    "@types/babel__core": "^7.20.5",
-    "@types/caller": "^1.0.2",
     "@types/node": "^20.19.30",
-    "@types/ramda": "^0.31.1",
-    "@types/resolve": "^1.20.6",
     "eslint": "^9.39.2",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
-    "rollup": "^4.56.0",
     "stylelint": "^17.1.1",
     "turbo": "^2.8.5",
-    "typescript": "next",
-    "webpack": "^5.105.0",
-    "webpack-dev-server": "^5.2.3",
-    "webpack-merge": "^6.0.1"
+    "typescript": "^5.9.3"
   },
-  "dependencies": {
-    "ramda": "^0.32.0"
-  },
-  "packageManager": "pnpm@10.0.0"
+  "packageManager": "pnpm@10.0.0",
+  "pnpm": {
+    "peerDependencyRules": {
+      "allowedVersions": {
+        "stylelint": "^17.0.0"
+      }
+    }
+  }
 }

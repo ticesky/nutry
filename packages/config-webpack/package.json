@@ -55,21 +55,19 @@
         "mini-css-extract-plugin": "^2.10.0",
         "postcss": "^8.5.6",
         "postcss-loader": "^8.2.0",
+        "ramda": "^0.32.0",
         "regenerator-runtime": "^0.14.1",
         "style-loader": "^4.0.0",
         "stylelint-webpack-plugin": "^5.1.0",
+        "webpack-merge": "^6.0.1",
         "workbox-webpack-plugin": "^7.4.0"
     },
-    "peerDependencies": {
-        "typescript": "5.x",
-        "webpack": "^5.74.0"
-    },
-    "peerDependenciesMeta": {
-        "typescript": {
-            "optional": true
-        }
-    },
     "devDependencies": {
-        "@types/less": "^3.0.8"
+        "@types/less": "^3.0.8",
+        "@types/ramda": "^0.31.1",
+        "webpack": "^5.105.0"
+    },
+    "peerDependencies": {
+        "webpack": "^5.105.0"
     }
 }

@@ -1,4 +1,4 @@
-import {EntryObject} from 'webpack';
+import {type EntryObject} from 'webpack';
 import {AppEntry} from '@nutry/utils-build';
 import {EntryConfig} from '../interface.js';
 

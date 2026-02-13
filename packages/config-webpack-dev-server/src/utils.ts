@@ -1,4 +1,4 @@
-import {EntryObject} from 'webpack';
+import {type EntryObject} from 'webpack';
 import {resolveFrom} from '@nutry/core';
 
 type EntryType = EntryObject[string];

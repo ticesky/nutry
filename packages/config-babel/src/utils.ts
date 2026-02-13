@@ -1,4 +1,4 @@
-import {PluginTarget} from '@babel/core';
+import type {PluginTarget} from '@babel/core';
 import {ThirdPartyUse} from '@nutry/settings';
 import {BabelConfigOptions, BabelConfigOptionsFilled} from './interface.js';
 

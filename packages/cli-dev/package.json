@@ -29,5 +29,13 @@
         "@nutry/utils-build": "workspace:*",
         "better-opn": "^3.0.2",
         "proxy-agent": "^6.5.0"
+    },
+    "devDependencies": {
+        "webpack": "^5.105.0",
+        "webpack-dev-server": "^5.2.3"
+    },
+    "peerDependencies": {
+        "webpack": "^5.105.0",
+        "webpack-dev-server": "^5.2.3"
     }
 }

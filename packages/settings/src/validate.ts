@@ -65,7 +65,7 @@ const optionalRuleConfig = (valueSchema: any) => {
 const schema = {
     properties: {
         driver: {
-            enum: ['webpack', 'vite'],
+            enum: ['webpack'],
             type: 'string',
         },
         featureMatrix: {

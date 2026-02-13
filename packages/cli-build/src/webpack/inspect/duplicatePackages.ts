@@ -1,4 +1,4 @@
-import {StatsCompilation} from 'webpack';
+import type {StatsCompilation} from 'webpack';
 import {uniq, reject, isNil} from 'ramda';
 import {readPackageConfig} from '@nutry/core';
 import {BuildInspectSettings, SourceFilter} from '@nutry/settings';
