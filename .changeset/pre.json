@@ -16,6 +16,7 @@
     "@nutry/utils-build": "0.0.1"
   },
   "changesets": [
-    "free-ghosts-lay"
+    "free-ghosts-lay",
+    "gentle-apes-hug"
   ]
 }
