@@ -339,7 +339,7 @@ export * from './interface/index.js';
 
 ```typescript
 // @nutry/settings/client
-// 提供客户端类型定义，用于业务代码中访问 skr.features 等
+// 提供客户端类型定义，用于业务代码中访问 nut.features 等
 ```
 
 ## 依赖关系

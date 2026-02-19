@@ -1,0 +1,38 @@
+{
+    "name": "@nutry/cli-test",
+    "version": "1.0.0-alpha.1",
+    "license": "ISC",
+    "type": "module",
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "default": "./dist/index.js"
+        }
+    },
+    "files": [
+        "dist"
+    ],
+    "publishConfig": {
+        "access": "public"
+    },
+    "scripts": {
+        "build": "tsc -b",
+        "clean": "tsc -b --clean && pnpm run clean:extra",
+        "clean:extra": "rm -rf dist",
+        "lint": "eslint --max-warnings=0 src",
+        "test": "echo 'No test in @nutry/cli-test'"
+    },
+    "dependencies": {
+        "@nutry/config-lint": "workspace:*",
+        "@nutry/config-jest": "workspace:*",
+        "@nutry/core": "workspace:*",
+        "@nutry/settings": "workspace:*",
+        "jest-cli": "^30.2.0",
+        "ramda": "^0.32.0"
+    },
+    "devDependencies": {
+        "@types/ramda": "^0.31.1"
+    }
+}

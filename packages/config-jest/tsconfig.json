@@ -1,0 +1,16 @@
+{
+    "extends": "../../tsconfig.base.json",
+    "compilerOptions": {
+        "allowSyntheticDefaultImports": true,
+        "rootDir": "src",
+        "outDir": "dist",
+    },
+    "references": [
+        { "path": "../config-babel" },
+        { "path": "../config-lint" },
+        { "path": "../core" },
+        { "path": "../settings" }
+    ],
+    "include": ["src"],
+    "exclude": ["dist", "config"]
+}

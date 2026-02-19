@@ -1,0 +1,51 @@
+import {Option} from 'clipanion';
+import {isEnum} from 'typanion';
+import {WorkMode} from '@nutry/core';
+import {BabelCommandLineArgs, ThirdPartyUse} from '@nutry/settings';
+import DynamicImportCommand from './DynamicImportCommand.js';
+
+export default class BabelCommand extends DynamicImportCommand<BabelCommandLineArgs> {
+    static paths = [['babel']];
+
+    static usage = {
+        description: 'Transform files with babel',
+    };
+
+    packageName = '@reskript/cli-babel';
+
+    mode = Option.String<WorkMode>(
+        '--mode',
+        'development',
+        {
+            validator: isEnum(['development', 'production']),
+            description: 'set build mode, default to "development"',
+        }
+    );
+
+    polyfill = Option.Boolean('--polyfill', true, {description: 'transform without inserting core-js imports'});
+
+    outDirectory = Option.String('--out-dir', {description: 'specify output to directory'});
+
+    clean = Option.Boolean('--clean', false, {description: 'remove dist directory before build'});
+
+    copy = Option.Boolean('--copy', false, {description: 'copy non-script file to output directory'});
+
+    file = Option.String();
+
+    uses: ThirdPartyUse[] = Option.Array('--uses', [], {description: 'indicate usage of third party frameworks'});
+
+    buildCommandLineArgs() {
+        return {
+            mode: this.mode,
+            polyfill: this.polyfill,
+            outDirectory: this.outDirectory,
+            clean: this.clean,
+            copy: this.copy,
+            uses: this.uses,
+        };
+    }
+
+    resolveRestArgs() {
+        return this.file;
+    }
+}

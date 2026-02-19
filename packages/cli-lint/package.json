@@ -21,7 +21,8 @@
         "build": "tsc -b",
         "clean": "tsc -b --clean && pnpm run clean:extra",
         "clean:extra": "rm -rf dist",
-        "lint": "eslint --max-warnings=0 src"
+        "lint": "eslint --max-warnings=0 src",
+        "test": "echo 'No test in @nutry/cli-lint'"
     },
     "dependencies": {
         "@nutry/config-lint": "workspace:*",

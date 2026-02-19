@@ -22,11 +22,12 @@
         "access": "public"
     },
     "scripts": {
-        "build": "tsc -b",
+        "build": "tsc -b tsconfig.build.json",
         "postbuild": "node scripts/post-build.js && cp dist/internal.d.ts dist/internal.d.cts",
-        "clean": "tsc -b --clean && pnpm run clean:extra",
+        "clean": "tsc -b tsconfig.build.json --clean && pnpm run clean:extra",
         "clean:extra": "rm -rf dist",
-        "lint": "eslint --max-warnings=0 src"
+        "lint": "eslint --max-warnings=0 src",
+        "test": "vitest run"
     },
     "dependencies": {
         "@babel/plugin-proposal-decorators": "^7.28.6",

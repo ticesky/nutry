@@ -13,5 +13,13 @@ export default defineConfig(
             '@typescript-eslint/no-floating-promises': 'off',
             '@typescript-eslint/no-misused-promises': 'off',
         }
+    },
+    {
+        name: "nutry/ts",
+        files: ['**/__tests__/**/*.test.{js,jsx,ts,tsx}'],
+        rules: {
+            '@typescript-eslint/no-unsafe-call': 'off',
+            '@typescript-eslint/no-unsafe-member-access': 'off'
+        }
     }
 );

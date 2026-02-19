@@ -1,0 +1,49 @@
+{
+    "name": "@nutry/config-jest",
+    "version": "1.0.0-alpha.1",
+    "license": "ISC",
+    "type": "commonjs",
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "default": "./dist/index.js"
+        },
+        "./config/*": "./config/*.js"
+    },
+    "files": [
+        "dist",
+        "config"
+    ],
+    "publishConfig": {
+        "access": "public"
+    },
+    "scripts": {
+        "build": "tsc -b && node scripts/post-build.mjs",
+        "clean": "tsc -b --clean && pnpm run clean:extra",
+        "clean:extra": "rm -rf dist config",
+        "lint": "eslint --max-warnings=0 src",
+        "test": "echo 'No test in @nutry/config-jest'"
+    },
+    "dependencies": {
+        "@babel/plugin-transform-modules-commonjs": "^7.28.6",
+        "@nutry/config-babel": "workspace:*",
+        "@nutry/config-lint": "workspace:*",
+        "@nutry/core": "workspace:*",
+        "@nutry/settings": "workspace:*",
+        "babel-jest": "^30.2.0",
+        "identity-obj-proxy": "^3.0.0",
+        "jest-environment-jsdom": "^30.2.0",
+        "jest-raw-loader": "^1.0.1",
+        "ramda": "^0.32.0",
+        "resolve": "^1.22.11",
+        "unixify": "^1.0.0"
+    },
+    "devDependencies": {
+        "@types/babel__core": "^7.20.5",
+        "@types/ramda": "^0.31.1",
+        "@types/resolve": "^1.20.6",
+        "prettier": "^3.8.1"
+    }
+}

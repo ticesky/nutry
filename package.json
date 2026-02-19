@@ -10,9 +10,10 @@
   "license": "ISC",
   "scripts": {
     "build": "turbo run build --filter=./packages/*",
-    "clean": "turbo run clean",
     "build:clean": "pnpm run clean && pnpm run build",
+    "clean": "turbo run clean",
     "lint": "turbo run lint --filter=./packages/*",
+    "test": "turbo run test --filter=./packages/*",
     "prepare": "husky"
   },
   "devDependencies": {
@@ -23,7 +24,8 @@
     "lint-staged": "^16.2.7",
     "stylelint": "^17.1.1",
     "turbo": "^2.8.5",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18"
   },
   "packageManager": "pnpm@10.0.0",
   "pnpm": {

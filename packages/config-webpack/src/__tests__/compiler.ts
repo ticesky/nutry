@@ -1,0 +1,80 @@
+import path from 'node:path';
+import webpack, {StatsModule, StatsAsset} from 'webpack';
+import {dirFromImportMeta} from '@nutry/core';
+import {fillProjectSettings, WebpackUserSetting} from '@nutry/settings';
+import {createWebpackConfig} from '../index.js';
+import {BuildContext} from '../interface.js';
+
+const currentDirectory = dirFromImportMeta(import.meta.url);
+
+interface CompileResult {
+    code: string;
+    entryModule?: StatsModule;
+    assets?: StatsAsset[];
+}
+
+export default async (entry: string, partialProjectSettings?: WebpackUserSetting) => {
+    const settings = {driver: 'webpack' as const, ...partialProjectSettings};
+    const projectSettings = fillProjectSettings(settings);
+    const context: BuildContext = {
+        cwd: path.resolve(currentDirectory, 'fixtures'),
+        mode: 'development',
+        cache: 'off',
+        usage: 'build',
+        srcDirectory: 'src',
+        hostPackageName: 'test-fixture',
+        buildVersion: '000000',
+        buildTime: (new Date()).toISOString(),
+        features: {},
+        buildTarget: 'stable',
+        isDefaultTarget: false,
+        entries: [],
+        projectSettings: {
+            ...projectSettings,
+            build: {
+                ...projectSettings.build,
+                script: {
+                    ...projectSettings.build.script,
+                    polyfill: false,
+                },
+            },
+        },
+    };
+    Object.assign(context.projectSettings.build, {reportLintErrors: false});
+    const config = await createWebpackConfig(context);
+    config.devtool = false;
+    config.entry = path.join(currentDirectory, 'fixtures', entry);
+    config.target = 'node';
+    config.output = {
+        path: path.join(currentDirectory, 'output'),
+        filename: 'bundle.js',
+    };
+    const compiler = webpack(config);
+
+    return new Promise<CompileResult>((resolve, reject) => {
+        compiler.run((err, stats) => {
+            if (err) {
+                reject(err);
+                return;
+            }
+
+            if (!stats) {
+                reject(new Error('No stats'));
+                return;
+            }
+
+            if (stats.hasErrors()) {
+                reject(new Error(stats.toJson().errors?.[0].message ?? 'Unkonwn error'));
+                return;
+            }
+
+            const output = stats.toJson();
+            const result = {
+                code: (output.modules?.[0].source ?? '').toString(),
+                entryModule: output.modules?.[0],
+                assets: output.assets,
+            };
+            resolve(result);
+        });
+    });
+};
