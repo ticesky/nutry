@@ -1,5 +1,5 @@
 import {describe, test, expect, vi} from 'vitest';
-import type{TransformOptions} from '@babel/core';
+import type {TransformOptions} from '@babel/core';
 import {dirFromImportMeta} from '@nutry/core';
 import {
     readProjectSettings,

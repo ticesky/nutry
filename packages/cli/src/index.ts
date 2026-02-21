@@ -6,6 +6,7 @@ import BabelCommand from './BabelCommand.js';
 import BuildCommand from './BuildCommand.js';
 import DevCommand from './DevCommand.js';
 import LintCommand from './LintCommand.js';
+import PlayCommand from './PlayCommand.js';
 import TestCommand from './TestCommand.js';
 
 const packageJsonContent = fs.readFileSync(
@@ -20,6 +21,7 @@ cli.register(BabelCommand);
 cli.register(BuildCommand);
 cli.register(DevCommand);
 cli.register(LintCommand);
+cli.register(PlayCommand);
 cli.register(TestCommand);
 cli.register(Builtins.HelpCommand);
 cli.register(Builtins.VersionCommand);

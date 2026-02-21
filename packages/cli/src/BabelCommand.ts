@@ -11,7 +11,7 @@ export default class BabelCommand extends DynamicImportCommand<BabelCommandLineA
         description: 'Transform files with babel',
     };
 
-    packageName = '@reskript/cli-babel';
+    packageName = '@nutry/cli-babel';
 
     mode = Option.String<WorkMode>(
         '--mode',

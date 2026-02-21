@@ -3,5 +3,5 @@ export const entry = {
 };
 
 export const templateData = {
-    copyright: '2022',
+    copyright: '2026',
 };

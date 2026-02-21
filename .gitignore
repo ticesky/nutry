@@ -7,6 +7,7 @@ yarn-error.log
 dist
 /*/*/config
 /*/*/coverage
+**/test-results
 
 # TypeScript incremental build cache
 **/*.tsbuildinfo

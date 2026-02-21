@@ -1,0 +1,40 @@
+{
+    "name": "@nutry/cli-babel",
+    "version": "1.0.0-alpha.1",
+    "license": "ISC",
+    "type": "module",
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "default": "./dist/index.js"
+        }
+    },
+    "files": [
+        "dist"
+    ],
+    "publishConfig": {
+        "access": "public"
+    },
+    "scripts": {
+        "build": "tsc -b",
+        "clean": "tsc -b --clean && pnpm run clean:extra",
+        "clean:extra": "rm -rf dist",
+        "lint": "eslint --max-warnings=0 src",
+        "test": "echo 'No test in @nutry/cli-babel'"
+    },
+    "dependencies": {
+        "@babel/core": "^7.29.0",
+        "@nutry/config-babel": "workspace:*",
+        "@nutry/config-lint": "workspace:*",
+        "@nutry/core": "workspace:*",
+        "cli-highlight": "^2.1.11",
+        "globby": "^16.1.0",
+        "p-limit": "^7.3.0"
+    },
+    "devDependencies": {
+        "@nutry/settings": "workspace:*",
+        "@types/babel__core": "^7.20.5"
+    }
+}
